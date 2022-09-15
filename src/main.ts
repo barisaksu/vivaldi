@@ -7,8 +7,6 @@ import generatedRoutes from '~pages'
 import './styles/tailwind.css'
 import './styles/main.css'
 
-import 'flowbite'
-
 const routes = setupLayouts(generatedRoutes)
 
 // https://github.com/antfu/vite-ssg
