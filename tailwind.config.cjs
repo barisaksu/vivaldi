@@ -5,6 +5,12 @@ module.exports = {
     './src/**/*.{vue,js,ts,jsx,tsx}',
     './node_modules/flowbite/**/*.js',
   ],
+  safelist: [
+    {
+      pattern: /(text|bg)-(red|green|blue|yellow|indigo)-(500|700|800|900)/,
+      variants: ['lg', 'hover', 'focus', 'lg:hover'],
+    },
+  ],
   theme: {
     extend: {
       colors: {
