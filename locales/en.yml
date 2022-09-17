@@ -4,6 +4,6 @@ button:
   go: GO
   home: Home
   hellovivaldi: Hello Vivaldi
-  toggle_dark: Toggle Theme
+  toggle_dark: Use dark theme
   toggle_langs: Change languages
 not-found: Not found
