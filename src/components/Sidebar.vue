@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Cog6ToothIcon, SparklesIcon } from '@heroicons/vue/24/outline'
+import { Cog6ToothIcon, SparklesIcon } from '@heroicons/vue/24/outline/index.js'
 import GlobalSettings from '../pages/settings.vue'
 
 const { t } = useI18n()
