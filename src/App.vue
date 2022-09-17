@@ -15,6 +15,12 @@ useHead({
       href: computed(() => preferredDark.value ? '/favicon-dark.svg' : '/favicon.svg'),
     },
   ],
+  script: [
+    {
+      src: 'https://unpkg.com/flowbite@1.5.3/dist/flowbite.js',
+      async: true,
+    },
+  ],
 })
 
 onMounted(() => {
