@@ -7,7 +7,12 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    Checkbox: typeof import('./components/ui/Checkbox.vue')['default']
+    Drawer: typeof import('./components/ui/Drawer.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Select: typeof import('./components/ui/Select.vue')['default']
+    Sidebar: typeof import('./components/Sidebar.vue')['default']
+    SidebarButton: typeof import('./components/SidebarButton.vue')['default']
   }
 }
