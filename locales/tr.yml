@@ -1,3 +1,5 @@
+site:
+  shortDescription: Tamamen ücretsiz ve açık kaynak kodlu müzikal kulak geliştirme uygulaması.
 button:
   about: Hakkında
   back: Geri
@@ -6,4 +8,10 @@ button:
   hellovivaldi: Merhaba Vivaldi
   toggle_dark: Koyu temayı kullan
   toggle_langs: Dilinizi seçin
+sidebar:
+  pitch_training: Tek Ses Alıştırması
+  interval_training: Aralık Alıştırması
+  related_minors: İlgili Minör Alıştırması
+  whats_news: Yenilikler
+  global_settings: Genel Ayarlar
 not-found: Bulunamadı
