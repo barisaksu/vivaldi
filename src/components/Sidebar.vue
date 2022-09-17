@@ -1,8 +1,14 @@
 <script setup lang="ts">
 import { Cog6ToothIcon, SparklesIcon } from '@heroicons/vue/24/outline'
+import GlobalSettings from '../pages/settings.vue'
+
+const showSettings = ref(false)
 </script>
 
 <template>
+  <Drawer v-if="showSettings" title="Settings" @close="showSettings = false">
+    <GlobalSettings />
+  </Drawer>
   <div
     class="flex h-screen w-14 flex-col items-center justify-start border-r bg-blue-100 border-blue-200 dark:border-gray-700 dark:bg-gray-800 py-2"
   >
@@ -31,9 +37,7 @@ import { Cog6ToothIcon, SparklesIcon } from '@heroicons/vue/24/outline'
     <div class="flex-1">
       <ul class="mt-4 flex h-full flex-col space-y-2">
         <li>
-          <RouterLink to="/exercises/pitch-training">
-            <SidebarButton tooltip="Pitch Training" color="blue" />
-          </RouterLink>
+          <SidebarButton tooltip="Pitch Training" color="blue" />
         </li>
         <li>
           <SidebarButton tooltip="Interval Training" color="yellow" />
@@ -46,17 +50,20 @@ import { Cog6ToothIcon, SparklesIcon } from '@heroicons/vue/24/outline'
     <!-- General  -->
     <ul class="mt-6 flex flex-shrink-0 flex-col space-y-2">
       <li>
-        <SidebarButton tooltip="What's News" color="blue" just-hover-color>
-          <template #icon>
-            <SparklesIcon class="h-6 w-6" />
-          </template>
-        </SidebarButton>
+        <RouterLink to="/changelog">
+          <SidebarButton tooltip="What's News" color="blue" just-hover-color>
+            <template #icon>
+              <SparklesIcon class="h-6 w-6" />
+            </template>
+          </SidebarButton>
+        </RouterLink>
       </li>
       <li>
         <SidebarButton
           tooltip="Global Settings"
           color="gray"
           just-hover-color
+          @click="showSettings = !showSettings"
         >
           <template #icon>
             <Cog6ToothIcon class="h-6 w-6" />
