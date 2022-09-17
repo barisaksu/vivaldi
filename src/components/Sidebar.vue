@@ -2,6 +2,8 @@
 import { Cog6ToothIcon, SparklesIcon } from '@heroicons/vue/24/outline'
 import GlobalSettings from '../pages/settings.vue'
 
+const { t } = useI18n()
+
 const showSettings = ref(false)
 </script>
 
@@ -10,7 +12,7 @@ const showSettings = ref(false)
     <GlobalSettings />
   </Drawer>
   <div
-    class="flex h-screen w-14 flex-col items-center justify-start border-r bg-blue-100 border-blue-200 dark:border-gray-700 dark:bg-gray-800 py-2"
+    class="flex h-screen min-w-[3.5rem] flex-col items-center justify-start border-r bg-blue-100 border-blue-200 dark:border-gray-700 dark:bg-gray-800 py-2"
   >
     <Transition
       enter-active-class="animate-pulse"
@@ -37,13 +39,13 @@ const showSettings = ref(false)
     <div class="flex-1">
       <ul class="mt-4 flex h-full flex-col space-y-2">
         <li>
-          <SidebarButton tooltip="Pitch Training" color="blue" />
+          <SidebarButton :tooltip="t('sidebar.pitch_training')" color="blue" />
         </li>
         <li>
-          <SidebarButton tooltip="Interval Training" color="yellow" />
+          <SidebarButton :tooltip="t('sidebar.interval_training')" color="yellow" />
         </li>
         <li>
-          <SidebarButton tooltip="Related Minors" color="red" />
+          <SidebarButton :tooltip="t('sidebar.related_minors')" color="red" />
         </li>
       </ul>
     </div>
@@ -51,7 +53,7 @@ const showSettings = ref(false)
     <ul class="mt-6 flex flex-shrink-0 flex-col space-y-2">
       <li>
         <RouterLink to="/changelog">
-          <SidebarButton tooltip="What's News" color="blue" just-hover-color>
+          <SidebarButton :tooltip="t('sidebar.whats_news')" color="blue" just-hover-color>
             <template #icon>
               <SparklesIcon class="h-6 w-6" />
             </template>
@@ -60,7 +62,7 @@ const showSettings = ref(false)
       </li>
       <li>
         <SidebarButton
-          tooltip="Global Settings"
+          :tooltip="t('sidebar.global_settings')"
           color="gray"
           just-hover-color
           @click="showSettings = !showSettings"
