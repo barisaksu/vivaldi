@@ -7,11 +7,11 @@ button:
   home: Home
   hellovivaldi: Hello Vivaldi
   toggle_dark: Use dark theme
-  toggle_langs: Select your languages
+  toggle_langs: Select your language
 sidebar:
   pitch_training: Pitch Training
   interval_training: Interval Training
   related_minors: Related Minors
-  whats_news: What's News
+  whats_news: What's New
   global_settings: Global Settings
 not-found: Not found
