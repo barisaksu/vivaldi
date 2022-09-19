@@ -5,7 +5,6 @@ button:
   back: Back
   go: GO
   home: Home
-  hellovivaldi: Hello Vivaldi
   toggle_dark: Use dark theme
   toggle_langs: Select your language
 sidebar:
@@ -14,4 +13,19 @@ sidebar:
   related_minors: Related Minors
   whats_news: What's New
   global_settings: Global Settings
+exercises:
+  common:
+    start: Start
+    settings: Settings
+    play_la: Play LA
+    press_to_start: Press the Start button to start the exercise.
+    new_question: New Question
+    replay: Replay
+    correct_answer: Wow, you are so good. Lets continue.
+    incorrect_answer: No worries, try again.
+  pitch_training:
+    automatic_new_question: Automatic New Question
+    automatic_new_question_desc: Automatically ask new question after correct answer.
+    strict_mode: Strict Mode
+    strict_mode_desc: The correct answer must be in the same octave!
 not-found: Not found

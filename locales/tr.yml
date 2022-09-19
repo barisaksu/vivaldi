@@ -5,7 +5,6 @@ button:
   back: Geri
   go: İLERİ
   home: Anasayfa
-  hellovivaldi: Merhaba Vivaldi
   toggle_dark: Koyu temayı kullan
   toggle_langs: Dilinizi seçin
 sidebar:
@@ -14,4 +13,19 @@ sidebar:
   related_minors: İlgili Minör Alıştırması
   whats_news: Yenilikler
   global_settings: Genel Ayarlar
+exercises:
+  common:
+    start: Başlat
+    settings: Ayarlar
+    play_la: LA Ver
+    press_to_start: Egzersizi başlatmak için Başlat butonuna basın.
+    new_question: Yeni Soru
+    replay: Yeniden Dinle
+    correct_answer: Vay canına, çok iyisin. Devam edelim.
+    incorrect_answer: Endişelenme, tekrar dene.
+  pitch_training:
+    automatic_new_question: Otomatik Yeni Soru
+    automatic_new_question_desc: Doğru cevaptan sonra otomatik olarak yeni soru sorar.
+    strict_mode: Katı Mod
+    strict_mode_desc: Cevabın doğru olarak kabul edilebilmesi için aynı oktavda olması gerekir.
 not-found: Bulunamadı
