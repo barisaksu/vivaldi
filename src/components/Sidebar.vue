@@ -39,7 +39,9 @@ const showSettings = ref(false)
     <div class="flex-1">
       <ul class="mt-4 flex h-full flex-col space-y-2">
         <li>
-          <SidebarButton :tooltip="t('sidebar.pitch_training')" color="blue" />
+          <RouterLink to="/exercises/pitch-training">
+            <SidebarButton :tooltip="t('sidebar.pitch_training')" color="blue" />
+          </RouterLink>
         </li>
         <li>
           <SidebarButton :tooltip="t('sidebar.interval_training')" color="yellow" />
