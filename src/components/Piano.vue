@@ -25,7 +25,7 @@ function removePressed(event: any) {
 </script>
 
 <template>
-  <div class="flex flex-col items-center justify-center">
+  <div class="flex flex-col items-center justify-center overflow-y-auto">
     <div
       class="flex h-auto w-fit items-center justify-center overflow-y-auto rounded-lg border border-gray-700 bg-gray-800 p-1"
     >
