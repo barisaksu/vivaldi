@@ -3,7 +3,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <div class="flex flex-col h-screen">
+  <div class="w-full bg-white dark:bg-gray-900">
     <div class="mx-auto max-w-screen-xl py-4 px-4 lg:py-12 lg:px-12">
       <Transition
         enter-active-class="animate-pulse"
@@ -21,6 +21,16 @@ const { t } = useI18n()
       >
         {{ t('site.shortDescription') }}
       </p>
+
+      <div class="columns-1 md:columns-2 gap-8 space-y-4 pb-12 text-start">
+        <ExerciseCard to="/exercises/pitch-training" title="Pitch Training">
+          Recognize sounds and heal your musical ear.
+        </ExerciseCard>
+        <ExerciseCard title="Interval Training" />
+        <ExerciseCard title="Ryhtm Training" />
+        <ExerciseCard title="Related Minors" />
+      </div>
+      <SponsorIncentive />
     </div>
   </div>
 </template>
