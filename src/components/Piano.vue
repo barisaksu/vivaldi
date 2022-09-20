@@ -25,9 +25,9 @@ function removePressed(event: any) {
 </script>
 
 <template>
-  <div class="flex flex-col items-center justify-center overflow-y-auto">
+  <div class="flex flex-col items-center justify-center w-full overflow-y-auto scale-90">
     <div
-      class="flex h-auto w-fit items-center justify-center overflow-y-auto rounded-lg border border-gray-700 bg-gray-800 p-1"
+      class="flex h-auto w-full lg:w-fit items-center justify-center overflow-y-auto rounded-lg border border-gray-700 bg-gray-800 p-1"
     >
       <div class="flex">
         <div
@@ -38,7 +38,7 @@ function removePressed(event: any) {
           @mousedown="playNote(key, $event)"
           @mouseup="removePressed"
         >
-          {{ key }}
+          <span class="scale-75">{{ key }}</span>
         </div>
       </div>
     </div>
@@ -90,7 +90,7 @@ function removePressed(event: any) {
   box-shadow: -1px 0 0 var(--white-80) inset, 0 0 5px hsl(0, 0%, 80%) inset,
     0 0 3px var(--black-20);
   background: linear-gradient(to bottom, hsl(0, 0%, 93%) 0%, white 100%);
-  color: var(--black-30);
+  color: #898989;
 }
 
 .black {
