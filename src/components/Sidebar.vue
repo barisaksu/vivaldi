@@ -12,7 +12,7 @@ const showSettings = ref(false)
     <GlobalSettings />
   </Drawer>
   <div
-    class="flex h-screen min-w-[3.5rem] flex-col items-center justify-start border-r bg-blue-100 border-blue-200 dark:border-gray-700 dark:bg-gray-800 py-2"
+    class="flex h-screen min-w-[3.5rem] flex-col items-center justify-start border-r bg-gray-100 border-gray-200 dark:border-gray-700 dark:bg-gray-800 py-2"
   >
     <Transition
       enter-active-class="animate-pulse"
