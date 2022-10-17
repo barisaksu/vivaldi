@@ -44,7 +44,9 @@ const showSettings = ref(false)
           </RouterLink>
         </li>
         <li>
-          <SidebarButton :tooltip="t('sidebar.interval_training')" color="yellow" />
+          <router-link to="/exercises/interval-training">
+            <SidebarButton :tooltip="t('sidebar.interval_training')" color="yellow" />
+          </router-link>
         </li>
         <li>
           <SidebarButton :tooltip="t('sidebar.related_minors')" color="red" />
