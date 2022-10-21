@@ -19,6 +19,7 @@
     "@tonaljs/tonal": "^4.6.5",
     "@vueuse/core": "^9.2.0",
     "@vueuse/head": "^0.7.11",
+    "animate.css": "^4.1.1",
     "flowbite": "^1.5.3",
     "nprogress": "^0.2.0",
     "pinia": "^2.0.22",

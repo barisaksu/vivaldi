@@ -6,6 +6,7 @@ import generatedRoutes from '~pages'
 
 import './styles/tailwind.css'
 import './styles/main.css'
+import '../node_modules/animate.css/animate.min.css'
 
 const routes = setupLayouts(generatedRoutes)
 
