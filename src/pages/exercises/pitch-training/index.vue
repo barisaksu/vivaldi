@@ -23,7 +23,6 @@ provide(
 provide('showSettings', showSettings)
 
 watch(question, (note) => {
-  console.log('watch question', note)
   play(note, '2n')
 })
 
@@ -39,8 +38,8 @@ watch(answer, (val) => {
 <template>
   <div class="flex h-screen flex-col">
     <ExerciseAppBar
-      title="Pitch Training"
-      description="Recognize sounds and heal your musical ear."
+      :title="$t('exercises.pitch_training.title')"
+      :description="$t('exercises.pitch_training.description')"
     >
       <template #right>
         <button
