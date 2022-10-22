@@ -20,12 +20,34 @@ exercises:
     play_la: LA Ver
     press_to_start: Egzersizi başlatmak için Başlat butonuna basın.
     new_question: Yeni Soru
+    answer_the_question: Soruyu cevaplayın!
     replay: Yeniden Dinle
     correct_answer: Vay canına, çok iyisin. Devam edelim.
     incorrect_answer: Endişelenme, tekrar dene.
   pitch_training:
+    title: Tek Ses Alıştırması
+    description: Sesleri tanıma becerinizi geliştirin.
     automatic_new_question: Otomatik Yeni Soru
     automatic_new_question_desc: Doğru cevaptan sonra otomatik olarak yeni soru sorar.
     strict_mode: Katı Mod
     strict_mode_desc: Cevabın doğru olarak kabul edilebilmesi için aynı oktavda olması gerekir.
+  interval_training:
+    title: Aralık Alıştırması
+    description: Müzikal aralık tanıma becerilerinizi geliştirin.
+    1P: Unison
+    2m: Küçük İkili
+    2M: Büyük İkili
+    3m: Küçük Üçlü
+    3M: Büyük Üçlü
+    4P: Tam Dörtlü
+    5P: Tam Beşli
+    6m: Küçük Altılı
+    6M: Büyük Altılı
+    7m: Küçük Yedili
+    7M: Büyük Yedili
+    ascending: Artan Melodik
+    descending: Azalan Melodik
+    ascending_harmonic: Artan Melodik & Armonik
+    descending_harmonic: Azalan Melodik & Armonik
+    harmonic: Armonik
 not-found: Bulunamadı

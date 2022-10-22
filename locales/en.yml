@@ -20,12 +20,34 @@ exercises:
     play_la: Play LA
     press_to_start: Press the Start button to start the exercise.
     new_question: New Question
+    answer_the_question: Answer the question!
     replay: Replay
     correct_answer: Wow, you are so good. Lets continue.
     incorrect_answer: No worries, try again.
   pitch_training:
+    title: Pitch Training
+    description: Improve your ability to recognize sounds.
     automatic_new_question: Automatic New Question
     automatic_new_question_desc: Automatically ask new question after correct answer.
     strict_mode: Strict Mode
     strict_mode_desc: The correct answer must be in the same octave!
+  interval_training:
+    title: Interval Training
+    description: Improve your musical interval recognition skills.
+    1P: Unison
+    2m: Minor 2nd
+    2M: Major 2nd
+    3m: Minor 3rd
+    3M: Major 3rd
+    4P: Perfect 4th
+    5P: Perfect 5th
+    6m: Minor 6th
+    6M: Major 6th
+    7m: Minor 7th
+    7M: Major 7th
+    ascending: Ascending
+    descending: Descending
+    ascending_harmonic: Ascending & Harmonic
+    descending_harmonic: Descending & Harmonic
+    harmonic: Harmonic
 not-found: Not found
