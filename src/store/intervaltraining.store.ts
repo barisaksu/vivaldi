@@ -6,7 +6,7 @@
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import { Interval, Note, Range } from '@tonaljs/tonal'
 
-const { playInterval } = useTone()
+// const { playInterval } = useTone()
 
 export const useIntervalTrainingStore = defineStore('intervaltraining', () => {
   const scale = ref(Range.chromatic(['C2', 'C5'], { sharps: true }))
@@ -32,6 +32,7 @@ export const useIntervalTrainingStore = defineStore('intervaltraining', () => {
   const result = ref(Interval.distance(firstNote.value, secondNote.value))
   const userAnswer: any = ref('')
   const isCorrect: any = ref(null)
+  const questionCount = ref(0)
 
   // others
   const autoSkip = ref(true)
@@ -42,6 +43,7 @@ export const useIntervalTrainingStore = defineStore('intervaltraining', () => {
   }
 
   function newQuestion() {
+    questionCount.value += 1
     userAnswer.value = '' // reset user answer
     isCorrect.value = null // reset isCorrect
 
@@ -53,19 +55,17 @@ export const useIntervalTrainingStore = defineStore('intervaltraining', () => {
       ],
     )
     result.value = Interval.distance(firstNote.value, secondNote.value)
-
-    play_interval()
   }
 
-  function play_interval() {
-    switch (intervalType.value) {
-      case 'ascending': playInterval.ascending([firstNote.value, secondNote.value], '2n'); break
-      case 'descending': playInterval.descending([firstNote.value, secondNote.value], '2n'); break
-      case 'harmonic': playInterval.harmonic([firstNote.value, secondNote.value], '2n'); break
-      case 'ascending_harmonic': playInterval.ascending_harmonic([firstNote.value, secondNote.value], '2n'); break
-      case 'descending_harmonic': playInterval.descending_harmonic([firstNote.value, secondNote.value], '2n'); break
-    }
-  }
+  // function play_interval() {
+  //   switch (intervalType.value) {
+  //     case 'ascending': playInterval.ascending([firstNote.value, secondNote.value], '2n'); break
+  //     case 'descending': playInterval.descending([firstNote.value, secondNote.value], '2n'); break
+  //     case 'harmonic': playInterval.harmonic([firstNote.value, secondNote.value], '2n'); break
+  //     case 'ascending_harmonic': playInterval.ascending_harmonic([firstNote.value, secondNote.value], '2n'); break
+  //     case 'descending_harmonic': playInterval.descending_harmonic([firstNote.value, secondNote.value], '2n'); break
+  //   }
+  // }
 
   function checkAnswer(answer: string) {
     isCorrect.value = answer === result.value
@@ -95,7 +95,7 @@ export const useIntervalTrainingStore = defineStore('intervaltraining', () => {
     userAnswer,
     autoSkip,
     autoSkipTime,
-    play_interval,
+    questionCount,
 
   }
 })

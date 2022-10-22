@@ -3,11 +3,21 @@ import { storeToRefs } from 'pinia'
 import Settings from './settings.vue'
 import { useIntervalTrainingStore } from '~/store/intervaltraining.store'
 
-const { play } = useTone()
+const { play, playInterval } = useTone()
 
 const intervalTrainingStore = useIntervalTrainingStore()
 
-const { userAnswer, isCorrect, selectedIntervals, autoSkip, autoSkipTime, firstNote, secondNote } = storeToRefs(intervalTrainingStore)
+const { userAnswer, isCorrect, selectedIntervals, autoSkip, autoSkipTime, firstNote, secondNote, intervalType, questionCount } = storeToRefs(intervalTrainingStore)
+
+function play_interval() {
+  switch (intervalType.value) {
+    case 'ascending': playInterval.ascending([firstNote.value, secondNote.value], '2n'); break
+    case 'descending': playInterval.descending([firstNote.value, secondNote.value], '2n'); break
+    case 'harmonic': playInterval.harmonic([firstNote.value, secondNote.value], '2n'); break
+    case 'ascending_harmonic': playInterval.ascending_harmonic([firstNote.value, secondNote.value], '2n'); break
+    case 'descending_harmonic': playInterval.descending_harmonic([firstNote.value, secondNote.value], '2n'); break
+  }
+}
 
 const timerStart = ref(false)
 const copyAutoSkipTime = ref()
@@ -28,6 +38,11 @@ function nextDelay() {
 
   timerStart.value = true
 }
+
+// hack
+watch(questionCount, () => {
+  play_interval()
+})
 
 // check the user answer
 watch(userAnswer, (newVal) => {
@@ -99,7 +114,7 @@ provide('showSettings', showSettings) // exerciseAppBar.vue
         <Transition name="list" appear>
           <div
             v-if="firstNote"
-            class="absolute flex h-24 w-24 bg-gray-800/30 rounded-lg top-0 left-0 m-4 justify-center items-center text-xl backdrop-blur-md backdrop-brightness-150 cursor-pointer hover:bg-gray-800/80 text-center" @click="intervalTrainingStore.play_interval()"
+            class="absolute flex h-24 w-24 bg-gray-800/30 rounded-lg top-0 left-0 m-4 justify-center items-center text-xl backdrop-blur-md backdrop-brightness-150 cursor-pointer hover:bg-gray-800/80 text-center" @click="play_interval()"
           >
             {{ $t('exercises.common.replay') }}
           </div>
