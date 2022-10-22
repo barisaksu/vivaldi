@@ -29,9 +29,33 @@ export function useTone() {
 
   const isLoaded = ref(sampler.loaded)
 
-  function play(note: string, time: string) {
+  // plays a single note
+  function play(note: string | string[], time: string) {
     sampler.triggerAttackRelease(note, time)
   }
 
-  return { play, isLoaded }
+  // play a chord
+  const playInterval = {
+    ascending(notes: string[], time: string) {
+      sampler.triggerAttackRelease(notes[0], time, Tone.now())
+      sampler.triggerAttackRelease(notes[1], time, Tone.now() + 1)
+    },
+    descending(notes: string[], time: string) {
+      sampler.triggerAttackRelease(notes[1], time, Tone.now())
+      sampler.triggerAttackRelease(notes[0], time, Tone.now() + 1)
+    },
+    harmonic(notes: string[], time: string, now = 0) {
+      sampler.triggerAttackRelease(notes, time, Tone.now() + now)
+    },
+    ascending_harmonic(notes: string[], time: string) {
+      this.ascending(notes, time)
+      this.harmonic(notes, time, 2)
+    },
+    descending_harmonic(notes: string[], time: string) {
+      this.descending(notes, time)
+      this.harmonic(notes, time, 2)
+    },
+  }
+
+  return { play, playInterval, isLoaded }
 }
