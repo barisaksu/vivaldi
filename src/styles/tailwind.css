@@ -8,7 +8,7 @@
   }
 
   html.dark {
-  @apply bg-gray-900;
-  color-scheme: dark;
-}
+    @apply bg-gray-900;
+    color-scheme: dark;
+  }
 }

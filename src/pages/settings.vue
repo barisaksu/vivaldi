@@ -8,7 +8,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="grid grid-cols-1">
+  <div class="grid grid-cols-1 p-4">
     <Select id="locales" v-model:selected="locale" :label="t('button.toggle_langs')">
       <option value="en">
         English

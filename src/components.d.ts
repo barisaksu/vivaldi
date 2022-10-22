@@ -9,10 +9,15 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     Checkbox: typeof import('./components/ui/Checkbox.vue')['default']
     Drawer: typeof import('./components/ui/Drawer.vue')['default']
+    ExerciseAppBar: typeof import('./components/ExerciseAppBar.vue')['default']
+    ExerciseCard: typeof import('./components/ExerciseCard.vue')['default']
+    Piano: typeof import('./components/Piano.vue')['default']
+    Radio: typeof import('./components/ui/Radio.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Select: typeof import('./components/ui/Select.vue')['default']
     Sidebar: typeof import('./components/Sidebar.vue')['default']
     SidebarButton: typeof import('./components/SidebarButton.vue')['default']
+    SponsorIncentive: typeof import('./components/SponsorIncentive.vue')['default']
   }
 }
