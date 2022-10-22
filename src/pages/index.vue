@@ -23,10 +23,12 @@ const { t } = useI18n()
       </p>
 
       <div class="columns-1 md:columns-2 gap-8 space-y-4 pb-12 text-start">
-        <ExerciseCard to="/exercises/pitch-training" title="Pitch Training">
-          Recognize sounds and heal your musical ear.
+        <ExerciseCard to="/exercises/pitch-training" :title="$t('exercises.pitch_training.title')">
+          {{ $t('exercises.pitch_training.description') }}
         </ExerciseCard>
-        <ExerciseCard title="Interval Training" />
+        <ExerciseCard :title="$t('exercises.interval_training.title')">
+          {{ $t('exercises.interval_training.description') }}
+        </ExerciseCard>
         <ExerciseCard title="Ryhtm Training" />
         <ExerciseCard title="Related Minors" />
       </div>
