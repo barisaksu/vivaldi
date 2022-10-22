@@ -17,8 +17,7 @@ useHead({
   ],
   script: [
     {
-      src: 'https://unpkg.com/flowbite@1.5.3/dist/flowbite.js',
-      defer: true,
+      src: 'https://cdn.jsdelivr.net/npm/flowbite@1.5.3/dist/flowbite.min.js',
     },
   ],
 })
