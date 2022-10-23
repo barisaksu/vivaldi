@@ -18,7 +18,7 @@ const classObject = computed(() => ({
 <template>
   <Popper
     :content="props.tooltip" placement="right" hover arrow :style="`--popper-theme-background-color: var(--color-${props.color}-800);
-  --popper-theme-background-color-hover: var(--color-${props.color}-800)`"
+  --popper-theme-background-color-hover: var(--color-${props.color}-800); margin: -8px;`"
   >
     <button
       type="button"
