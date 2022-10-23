@@ -9,7 +9,7 @@ const { autoSkip, strictMode }
 </script>
 
 <template>
-  <div class="flex flex-col space-y-4">
+  <div class="flex flex-col space-y-4 p-4">
     <Checkbox
       v-model:checked="autoSkip"
       :label="t('exercises.pitch_training.automatic_new_question')"
