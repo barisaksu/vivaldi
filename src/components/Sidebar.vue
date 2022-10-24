@@ -39,30 +39,21 @@ const showSettings = ref(false)
     <div class="flex-1">
       <ul class="mt-4 flex h-full flex-col space-y-2">
         <li>
-          <RouterLink to="/exercises/pitch-training">
-            <SidebarButton :tooltip="t('sidebar.pitch_training')" color="blue" />
-          </RouterLink>
+          <SidebarButton href="/exercises/pitch-training" :tooltip="t('sidebar.pitch_training')" color="blue" />
         </li>
         <li>
-          <router-link to="/exercises/interval-training">
-            <SidebarButton :tooltip="t('sidebar.interval_training')" color="yellow" />
-          </router-link>
-        </li>
-        <li>
-          <SidebarButton :tooltip="t('sidebar.related_minors')" color="red" />
+          <SidebarButton href="/exercises/interval-training" :tooltip="t('sidebar.interval_training')" color="yellow" />
         </li>
       </ul>
     </div>
     <!-- General  -->
     <ul class="mt-6 flex flex-shrink-0 flex-col space-y-2">
       <li>
-        <RouterLink to="/changelog">
-          <SidebarButton :tooltip="t('sidebar.whats_news')" color="blue" just-hover-color>
-            <template #icon>
-              <SparklesIcon class="h-6 w-6" />
-            </template>
-          </SidebarButton>
-        </RouterLink>
+        <SidebarButton href="/changelog" :tooltip="t('sidebar.whats_news')" color="blue" just-hover-color>
+          <template #icon>
+            <SparklesIcon class="h-6 w-6" />
+          </template>
+        </SidebarButton>
       </li>
       <li>
         <SidebarButton
