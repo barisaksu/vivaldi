@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const { locale } = useI18n()
+
 useHead({
   title: 'Vivaldi',
   meta: [
@@ -23,6 +25,11 @@ useHead({
 })
 
 onMounted(() => {
+  if (localStorage.getItem('globalSettings')) {
+    const lang = JSON.parse(localStorage.getItem('globalSettings') as string).lang
+    locale.value = lang
+  }
+
   console.log('%c Vivaldi Beta', 'background: crimson; color: #fff; padding: 2px;')
 })
 </script>
