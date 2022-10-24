@@ -65,7 +65,7 @@ const classObject = computed(() => ({
   </Popper>
 </template>
 
-<style>
+<style lang="scss">
 :root {
   --popper-theme-text-color: #ffffff;
   --popper-theme-border-width: 0px;
@@ -77,5 +77,19 @@ const classObject = computed(() => ({
 
 a.router-link-active {
   background: v-bind("props.justHoverColor ? `var(--color-${props.color}-700)` : `var(--color-${props.color}-700)`");
+  position: relative;
+
+  &:after{
+    content: "";
+    position: absolute;
+    left: 100%;
+    top: 39%;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: v-bind("`5px solid var(--color-${props.color}-700)`");
+    clear: both;
+}
 }
 </style>
