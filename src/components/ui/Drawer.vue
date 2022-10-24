@@ -10,13 +10,18 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const emit = defineEmits(['close'])
+
+const drawerRef = ref(null)
+
+onClickOutside(drawerRef, () => {
+  emit('close')
+})
 </script>
 
 <template>
-  <!-- <div class="absolute w-full h-screen z-20 backdrop-blur-sm backdrop-opacity-40" /> -->
   <div
-    class="fixed z-40 h-screen overflow-y-auto bg-white dark:bg-gray-800 dark:border-gray-700"
-    :class="[props.position === 'right' ? 'right-0 border-l' : 'left-0 border-r', props.fullscreen ? 'w-full' : 'w-80']"
+    ref="drawerRef"
+    class="fixed z-40 h-screen overflow-y-auto bg-white dark:bg-gray-800 dark:border-gray-700" :class="[props.position === 'right' ? 'right-0 border-l' : 'left-0 border-r', props.fullscreen ? 'w-full' : 'w-80']"
   >
     <div class="flex justify-between items-center px-4 mb-2">
       <h5
