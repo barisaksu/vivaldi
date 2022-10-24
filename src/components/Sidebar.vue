@@ -8,9 +8,14 @@ const showSettings = ref(false)
 </script>
 
 <template>
-  <Drawer v-if="showSettings" title="Settings" @close="showSettings = false">
-    <GlobalSettings />
-  </Drawer>
+  <Transition
+    enter-active-class="animate__animated animate__fadeInRight animate__faster"
+    leave-active-class="animate__animated animate__fadeOutRight"
+  >
+    <Drawer v-if="showSettings" title="Settings" @close="showSettings = false">
+      <GlobalSettings />
+    </Drawer>
+  </Transition>
   <div
     class="flex h-screen min-w-[3.5rem] flex-col items-center justify-start border-r bg-gray-100 border-gray-200 dark:border-gray-700 dark:bg-gray-800 py-2"
   >

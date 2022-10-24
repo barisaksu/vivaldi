@@ -9,9 +9,14 @@ const showSettings = inject('showSettings', false)
 </script>
 
 <template>
-  <Drawer v-if="showSettings" title="Settings" @close="showSettings = false">
-    <slot name="settings" />
-  </Drawer>
+  <Transition
+    enter-active-class="animate__animated animate__fadeInRight animate__faster"
+    leave-active-class="animate__animated animate__fadeOutRight animate__faster"
+  >
+    <Drawer v-if="showSettings" title="Settings" @close="showSettings = false">
+      <slot name="settings" />
+    </Drawer>
+  </Transition>
   <div
     class="mb-4 flex h-16 w-full items-center justify-between border-b bg-gray-100 border-gray-200 dark:border-gray-700 dark:bg-gray-800 px-2 pt-2 text-black dark:text-white"
   >
