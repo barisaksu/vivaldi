@@ -26,11 +26,9 @@ const { t } = useI18n()
         <ExerciseCard to="/exercises/pitch-training" :title="$t('exercises.pitch_training.title')">
           {{ $t('exercises.pitch_training.description') }}
         </ExerciseCard>
-        <ExerciseCard :title="$t('exercises.interval_training.title')">
+        <ExerciseCard to="/exercises/interval-training" :title="$t('exercises.interval_training.title')">
           {{ $t('exercises.interval_training.description') }}
         </ExerciseCard>
-        <ExerciseCard title="Ryhtm Training" />
-        <ExerciseCard title="Related Minors" />
       </div>
       <SponsorIncentive />
     </div>
