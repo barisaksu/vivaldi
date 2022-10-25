@@ -6,7 +6,7 @@ const { t } = useI18n()
   <div class="w-full bg-white dark:bg-gray-900">
     <div class="mx-auto max-w-screen-xl py-4 px-4 lg:py-12 lg:px-12">
       <h1
-        class="animate__animated animate__jackInTheBox w-min mb-4 bg-gradient-to-br from-blue-400 to-blue-600 bg-clip-text text-4xl font-extrabold leading-none tracking-tight text-transparent md:text-5xl lg:text-6xl"
+        class="animate__animated animate__jackInTheBox w-min mb-4 bg-gradient-to-br from-blue-400 to-blue-600 bg-clip-text text-4xl font-extrabold leading-none tracking-tight text-transparent md:text-5xl lg:text-6xl font-sans"
       >
         Vivaldi
       </h1>
@@ -25,6 +25,7 @@ const { t } = useI18n()
         </ExerciseCard>
       </div>
       <SponsorIncentive />
+      <Sponsors />
     </div>
   </div>
 </template>
