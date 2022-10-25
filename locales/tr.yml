@@ -7,6 +7,15 @@ button:
   home: Anasayfa
   toggle_dark: Koyu temayı kullan
   toggle_langs: Dilinizi seçin
+support:
+  sponsor_incentive_title: Vivaldi'nin gelişimine destek olun!
+  sponsor_incentive_description: Vivaldi'nin geleceği desteğinize bağlı. Projeyi destekleyerek projeye daha fazla zaman ayırmamıza yardımcı olabilirsiniz.
+  patreon: Patreon destekçilerimiz arasına katılın
+  feedback: Geri bildirim gönderin
+  sponsors_title_before: Bu
+  sponsors_title_highlight: sizin
+  sponsors_title_after: sayenizde oldu
+  sponsors_description: Vivaldi'nin gelişimi cömert sponsorlarımız tarafından hızlandırıldı.
 sidebar:
   pitch_training: Tek Ses Alıştırması
   interval_training: Aralık Alıştırması

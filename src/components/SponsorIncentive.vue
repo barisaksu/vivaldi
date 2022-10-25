@@ -8,6 +8,8 @@ const props = withDefaults(defineProps<Props>(), {
   patreon: 'https://www.patreon.com/barisaksu',
   email: 'mailto:baris@barisaksu.com',
 })
+
+const { t } = useI18n()
 </script>
 
 <template>
@@ -18,11 +20,10 @@ const props = withDefaults(defineProps<Props>(), {
       <h2
         class="text-2xl font-extrabold leading-8 tracking-tight text-white sm:text-3xl sm:leading-9"
       >
-        Support the development of Vivaldi!
+        {{ t('support.sponsor_incentive_title') }}
       </h2>
       <p class="mt-3 max-w-3xl text-lg leading-6 text-indigo-200">
-        Vivaldi's future depends on your support. By supporting the project, you
-        can help us devote more time to the project.
+        {{ t('support.sponsor_incentive_description') }}
       </p>
     </div>
     <div class="mt-8 sm:w-full sm:max-w-md xl:mt-0 xl:ml-8">
@@ -32,14 +33,14 @@ const props = withDefaults(defineProps<Props>(), {
           :href="props.patreon"
           target="_blank"
         >
-          Sponsor us on patreon
+          {{ t('support.patreon') }}
         </a>
         <a
           class="flex w-full items-center justify-center rounded-md border border-transparent bg-purple-500 px-5 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out hover:bg-purple-400 focus:bg-purple-400 focus:outline-none"
           :href="props.email"
           target="_blank"
         >
-          Feedback
+          {{ t('support.feedback') }}
         </a>
       </div>
     </div>

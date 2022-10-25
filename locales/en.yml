@@ -7,6 +7,15 @@ button:
   home: Home
   toggle_dark: Use dark theme
   toggle_langs: Select your language
+support:
+  sponsor_incentive_title: Support the development of Vivaldi!
+  sponsor_incentive_description: Vivaldi's future depends on your support. By supporting the project, you can help us devote more time to the project.
+  patreon: Sponsor us on patreon
+  feedback: Feedback
+  sponsors_title_before: ''
+  sponsors_title_highlight: You
+  sponsors_title_after: make this possible
+  sponsors_description: Vivaldi's development has been accelerated by our generous sponsors.
 sidebar:
   pitch_training: Pitch Training
   interval_training: Interval Training
