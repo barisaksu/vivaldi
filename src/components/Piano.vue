@@ -1,20 +1,27 @@
 <script setup lang="ts">
+import { WebMidi } from 'webmidi'
+import { storeToRefs } from 'pinia'
 import { usePianoStore } from '~/store/piano.store'
-
-interface Props {
-  scale?: string[]
-}
+import { useMidiStore } from '~/store/midi.store'
 
 const props = withDefaults(defineProps<Props>(), {
   scale: () => ['C2', 'C#2', 'D2', 'D#2', 'E2', 'F2', 'F#2', 'G2', 'G#2', 'A2', 'A#2', 'B2', 'C3', 'C#3', 'D3', 'D#3', 'E3', 'F3', 'F#3', 'G3', 'G#3', 'A3', 'A#3', 'B3', 'C4', 'C#4', 'D4', 'D#4', 'E4', 'F4', 'F#4', 'G4', 'G#4', 'A4', 'A#4', 'B4', 'C5'],
 })
 
+const midiStore = useMidiStore()
+
+const { midi_input } = storeToRefs(midiStore)
+
+interface Props {
+  scale?: string[]
+}
+
 const { play } = useTone()
 
 const pianoStore = usePianoStore()
 
-function playNote(note: string, event: any) {
-  event.target.classList.add('pressed')
+function playNote(note: string, event?: any) {
+  event?.target.classList.add('pressed')
   pianoStore.pressed = note
   play(note, '8n')
 }
@@ -22,6 +29,23 @@ function playNote(note: string, event: any) {
 function removePressed(event: any) {
   event.target.classList.remove('pressed')
 }
+
+/**
+ * MIDI
+ */
+watch(midi_input, (value) => {
+  console.log('input was changed: ', value)
+
+  const input = WebMidi.getInputByName(value.toString())
+  input.addListener('noteon', (e) => { // note on
+    console.log('Note on: ', e.note.identifier)
+    playNote(e.note.identifier)
+  })
+
+  input.addListener('noteoff', (e) => { // note off
+    console.log('Note off çalıştı: ', e.note.identifier)
+  })
+})
 </script>
 
 <template>
@@ -34,7 +58,7 @@ function removePressed(event: any) {
           v-for="(key, index) in props.scale"
           :key="index"
           class=""
-          :class="[key.includes('#') ? 'black' : 'white']"
+          :class="[key.includes('#') ? 'black' : 'white', key === pianoStore.pressed ? 'pressed' : '']"
           @mousedown="playNote(key, $event)"
           @mouseup="removePressed"
         >
