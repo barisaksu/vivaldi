@@ -49,6 +49,7 @@ specifiers:
   vue-router: ^4.1.5
   vue-tsc: ^1.0.8
   vue3-popper: ^1.5.0
+  webmidi: ^3.0.21
 
 dependencies:
   '@heroicons/vue': 2.0.11_vue@3.2.39
@@ -65,6 +66,7 @@ dependencies:
   vue-i18n: 9.2.2_vue@3.2.39
   vue-router: 4.1.5_vue@3.2.39
   vue3-popper: 1.5.0_vue@3.2.39
+  webmidi: 3.0.21
 
 devDependencies:
   '@antfu/eslint-config': 0.25.2_irgkl5vooow2ydyo6aokmferha
@@ -2075,6 +2077,11 @@ packages:
   /@types/web-bluetooth/0.0.15:
     resolution: {integrity: sha512-w7hEHXnPMEZ+4nGKl/KDRVpxkwYxYExuHOYXyzIzCDzEZ9ZCGMAewulr9IqJu2LR4N37fcnb1XVeuZ09qgOxhA==}
 
+  /@types/webmidi/2.0.6:
+    resolution: {integrity: sha512-sfS0A5IryqmBrUpcGPipEPeFdpqmZzP6b6lZFxHKgz5n2Vhzh4yJ5P2TvoDUhDjqJyv0Y25ng0Qodgo2Vu08ug==}
+    dev: false
+    optional: true
+
   /@types/yauzl/2.10.0:
     resolution: {integrity: sha512-Cn6WYCm0tXv8p6k+A8PvbDG763EDpBoTzHdA+Q/MF6H3sapGjCm9NzoaJncJS9tUKSuCoDs9XHxYYsQDgxR6kw==}
     requiresBuild: true
@@ -3543,6 +3550,12 @@ packages:
     dependencies:
       path-type: 4.0.0
     dev: true
+
+  /djipevents/2.0.6:
+    resolution: {integrity: sha512-2vS7/OVdqocBAIVPbxhk36swE4HnjUL1muoibrkoaCaEAEAF/ww8QbYm55PqlzMp51pvD01wHr/CkZmKZdrI/g==}
+    dependencies:
+      '@babel/runtime': 7.19.0
+    dev: false
 
   /dlv/1.1.3:
     resolution: {integrity: sha512-+HlytyjlPKnIG8XuRG8WvmBP8xs8P71y+SKKS6ZXWoEgLuePxtDoUEiH7WkdePWrQ5JBpE6aoVqfZfJUQkjXwA==}
@@ -5442,6 +5455,12 @@ packages:
       minimatch: 3.1.2
     dev: true
 
+  /jazz-midi/1.7.6:
+    resolution: {integrity: sha512-vKCmBpotb1y+kEbRlu43COar2LzV46uOTTzyM/zTx5LR7WUTWle7FFC8rphqBVdryW66QtOyUA2N/DWZToBang==}
+    engines: {node: '>=10.0.0'}
+    dev: false
+    optional: true
+
   /jest-worker/26.6.2:
     resolution: {integrity: sha512-KWYVV1c4i+jbMpaBC+U++4Va0cp8OisU185o73T1vo99hqi7w8tSJfUXYswwqqrjzwxa6KpRK54WhPvwf5w6PQ==}
     engines: {node: '>= 10.13.0'}
@@ -5628,6 +5647,15 @@ packages:
       array-includes: 3.1.5
       object.assign: 4.1.4
     dev: true
+
+  /jzz/1.5.3:
+    resolution: {integrity: sha512-gEih5CUMkK8n+2Mm5QHi+T64TLb68UxyQgYAOATSIA9Js3ZjMOmnGet48thbT1wLbh9J+NK+3wPcEiGo0OGvng==}
+    requiresBuild: true
+    dependencies:
+      '@types/webmidi': 2.0.6
+      jazz-midi: 1.7.6
+    dev: false
+    optional: true
 
   /kind-of/6.0.3:
     resolution: {integrity: sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==}
@@ -8450,6 +8478,15 @@ packages:
     resolution: {integrity: sha512-VwddBukDzu71offAQR975unBIGqfKZpM+8ZX6ySk8nYhVoo5CYaZyzt3YBvYtRtO+aoGlqxPg/B87NGVZ/fu6g==}
     engines: {node: '>=12'}
     dev: true
+
+  /webmidi/3.0.21:
+    resolution: {integrity: sha512-SStCLo099908jR0duYUTstVHNlKh9A/WvXIF5ED2ShGnE2MAy28UhrdzgjLsyDzOiBn8Od3ngT8g/MVa2TC5hg==}
+    engines: {node: '>=8.5'}
+    dependencies:
+      djipevents: 2.0.6
+    optionalDependencies:
+      jzz: 1.5.3
+    dev: false
 
   /webpack-sources/3.2.3:
     resolution: {integrity: sha512-/DyMEOrDgLKKIG0fmvtz+4dUX/3Ghozwgm6iPp8KRhvn+eQf9+Q7GWxVNMk3+uCPWfdXYC4ExGBckIXdFEfH1w==}
