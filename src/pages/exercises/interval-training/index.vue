@@ -9,6 +9,10 @@ const intervalTrainingStore = useIntervalTrainingStore()
 
 const { userAnswer, isCorrect, selectedIntervals, autoSkip, autoSkipTime, firstNote, secondNote, intervalType, questionCount } = storeToRefs(intervalTrainingStore)
 
+// const disableNewQuestionButton = computed(() => {
+//   return userAnswer.value !== '' && !isCorrect.value
+// })
+
 function play_interval() {
   switch (intervalType.value) {
     case 'ascending': playInterval.ascending([firstNote.value, secondNote.value], '2n'); break
@@ -66,7 +70,8 @@ provide('showSettings', showSettings) // exerciseAppBar.vue
       <template #right>
         <button
           type="button"
-          class="rounded-lg bg-yellow-400 px-5 py-2.5 text-sm font-medium text-white hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 dark:focus:ring-yellow-900"
+          class="rounded-lg bg-yellow-400 px-5 py-2.5 text-sm font-medium text-white hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 dark:focus:ring-yellow-900 disabled:opacity-50"
+          :disabled="timerStart"
           @click="intervalTrainingStore.newQuestion()"
         >
           {{ firstNote ? $t('exercises.common.new_question') : $t('exercises.common.start') }}
@@ -130,7 +135,7 @@ provide('showSettings', showSettings) // exerciseAppBar.vue
       </div>
 
       <TransitionGroup v-show="firstNote" tag="ul" name="list" class="flex justify-center space-x-2 py-4">
-        <li
+        <button
           v-for="(value, index) in selectedIntervals" :key="index" type="button" class="intervalBtn cursor-pointer" :class="{
             // eslint-disable-next-line vue/quote-props
             'correct': isCorrect && index === userAnswer,
@@ -139,7 +144,7 @@ provide('showSettings', showSettings) // exerciseAppBar.vue
           }" :disabled="isCorrect && index !== userAnswer" @click="userAnswer = index"
         >
           {{ $t(value.name) }}
-        </li>
+        </button>
       </TransitionGroup>
     </div>
   </div>

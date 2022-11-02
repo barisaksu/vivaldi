@@ -72,8 +72,10 @@ export const useIntervalTrainingStore = defineStore('intervaltraining', () => {
     if (isCorrect.value === false) {
       setTimeout(() => {
         // reset user answer && isCorrect
-        isCorrect.value = null
-        userAnswer.value = ''
+        if (isCorrect.value !== true) {
+          isCorrect.value = null
+          userAnswer.value = ''
+        }
       }, 1000)
     }
     return answer === result.value
