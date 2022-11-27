@@ -7,14 +7,17 @@ module.exports = {
   ],
   safelist: [
     {
-      pattern: /(text|bg|ring)-(red|green|blue|yellow|indigo|gray|slate)-(100|200|300|400|500|600|700|800|900)/,
-      variants: ['lg', 'hover', 'focus', 'dark', 'lg:hover', 'dark:focus', 'dark:hover'],
+      pattern: /(text|bg|ring|border)-(red|green|blue|cyan|yellow|indigo|gray|slate)-(100|200|300|400|500|600|700|800|900)/,
+      variants: ['lg', 'hover', 'focus', 'dark', 'lg:hover', 'dark:focus', 'dark:hover', 'group-hover'],
     },
   ],
   theme: {
     extend: {
       colors: {
         primary: { 50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd', 400: '#60a5fa', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af', 900: '#1e3a8a' },
+      },
+      maxWidth: {
+        '1/2': '50%',
       },
     },
     fontFamily: {
