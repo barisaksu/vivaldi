@@ -19,6 +19,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 const emit = defineEmits(['isExpanded'])
 
+const { t } = useI18n()
 const classObject = computed(() => ({
   [`bg-${props.color}-700`]: !props.justHoverColor,
   borusan: props.showSubMenux,
@@ -37,7 +38,7 @@ watch(
 <template>
   <div>
     <Popper
-      class="group popper-custom-css" :content="props.tooltip" placement="right" hover arrow :style="`--popper-theme-background-color: var(--color-${props.color}-700);
+      class="group popper-custom-css" :content="t(props.tooltip)" placement="right" hover arrow :style="`--popper-theme-background-color: var(--color-${props.color}-700);
     --popper-theme-background-color-hover: var(--color-${props.color}-700); margin: 0px; border: none;`"
     >
       <button
@@ -60,7 +61,7 @@ watch(
     <ul v-if="showSubMenu" class="space-y-2 mt-2">
       <li v-for="(submenu, index) in subMenus" :key="index">
         <Popper
-          class="group" :content="submenu.name" placement="right" hover arrow :style="`--popper-theme-background-color: var(--color-${submenu.color}-700);
+          class="group" :content="t(submenu.name)" placement="right" hover arrow :style="`--popper-theme-background-color: var(--color-${submenu.color}-700);
         --popper-theme-background-color-hover: var(--color-${submenu.color}-700); margin: 0; border: none;`"
         >
           <RouterLink

@@ -17,9 +17,9 @@ support:
   sponsors_title_after: make this possible
   sponsors_description: Vivaldi's development has been accelerated by our generous sponsors.
 sidebar:
-  pitch_training: Pitch Training
-  interval_training: Interval Training
-  related_minors: Related Minors
+  exercises: Exercises
+  vivaldi_for_se: Vivaldi for Sound Engineers
+  musician_tools: Tools
   whats_news: What's New
   global_settings: Global Settings
 exercises:
@@ -59,4 +59,16 @@ exercises:
     ascending_harmonic: Ascending & Harmonic
     descending_harmonic: Descending & Harmonic
     harmonic: Harmonic
+vivaldiforse:
+  critical_listening:
+    title: Critical Listening
+musician_tools:
+  guitar_tuner:
+    title: Guitar Tuner
+  metronome:
+    title: Metronome
+  reverb_delay_time_calculator:
+    title: Reverb & Delay Time Calculator
+  streaming_royalty_calculator:
+    title: Streaming Royalty Calculator
 not-found: Not found

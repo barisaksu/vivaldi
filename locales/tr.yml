@@ -17,9 +17,9 @@ support:
   sponsors_title_after: sayenizde oldu
   sponsors_description: Vivaldi'nin gelişimi cömert sponsorlarımız tarafından hızlandırıldı.
 sidebar:
-  pitch_training: Tek Ses Alıştırması
-  interval_training: Aralık Alıştırması
-  related_minors: İlgili Minör Alıştırması
+  exercises: Egzersizler
+  vivaldi_for_se: Ses Mühendisleri için Vivaldi
+  musician_tools: Araçlar
   whats_news: Yenilikler
   global_settings: Genel Ayarlar
 exercises:
@@ -59,4 +59,16 @@ exercises:
     ascending_harmonic: Artan Melodik & Armonik
     descending_harmonic: Azalan Melodik & Armonik
     harmonic: Armonik
+vivaldiforse:
+  critical_listening:
+    title: Kritik Dinleme
+musician_tools:
+  guitar_tuner:
+    title: Gitar Akortlayıcı
+  metronome:
+    title: Metronom
+  reverb_delay_time_calculator:
+    title: Reverb & Delay Zamanı Hesaplayıcı
+  streaming_royalty_calculator:
+    title: Platform Telif Hakkı Hesaplayıcısı
 not-found: Bulunamadı

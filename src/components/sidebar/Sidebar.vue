@@ -11,18 +11,18 @@ const showSettings = ref(false)
 
 const menus = ref([
   {
-    name: 'Exercises',
+    name: 'sidebar.exercises',
     color: 'blue',
     isExpanded: true,
     items: [
       {
-        name: 'Pitch Training',
+        name: 'exercises.pitch_training.title',
         icon: PitchTrainingIcon,
         href: '/exercises/pitch-training',
         color: 'blue',
       },
       {
-        name: 'Interval Training',
+        name: 'exercises.interval_training.title',
         icon: IntervalTrainingIcon,
         href: '/exercises/interval-training',
         color: 'blue',
@@ -30,13 +30,13 @@ const menus = ref([
     ],
   },
   {
-    name: 'Vivaldi for Sound Engineers',
+    name: 'sidebar.vivaldi_for_se',
     icon: VivaldiForSEIcon,
     color: 'red',
     isExpanded: false,
     items: [
       {
-        name: 'Critical Listening',
+        name: 'vivaldiforse.critical_listening.title',
         icon: CriticalListeningIcon,
         href: '/settings',
         color: 'red',
@@ -44,31 +44,31 @@ const menus = ref([
     ],
   },
   {
-    name: 'Tools',
+    name: 'sidebar.musician_tools',
     icon: ToolsIcon,
     color: 'yellow',
     isExpanded: false,
     items: [
       {
-        name: 'Guitar Tuner',
+        name: 'musician_tools.guitar_tuner.title',
         icon: GuitarTunerIcon,
         href: '/tuner',
         color: 'yellow',
       },
       {
-        name: 'Metronome',
+        name: 'musician_tools.metronome.title',
         icon: MetronomeIcon,
         href: '/settings',
         color: 'yellow',
       },
       {
-        name: 'Reverb & Delay Time Calculator',
+        name: 'musician_tools.reverb_delay_time_calculator.title',
         icon: ReverbDelayCalculatorIcon,
         href: '/settings',
         color: 'yellow',
       },
       {
-        name: 'Streaming Royalty Calculator',
+        name: 'musician_tools.streaming_royalty_calculator.title',
         icon: ReverbDelayCalculatorIcon,
         href: '/settings',
         color: 'yellow',
