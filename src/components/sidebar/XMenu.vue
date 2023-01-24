@@ -69,8 +69,8 @@ watch(
             type="button"
             exact-active-class="text-white dark:text-white"
             aria-current-value="page"
-            class="hover:text-white dark:hover:text-white dark:focus:text-white font-medium rounded-md text-sm p-2.5 text-center inline-flex items-center bg-opacity-20 hover:bg-opacity-100 focus:bg-opacity-100 focus:ring-2 focus:outline-none "
-            :class="[`bg-${submenu.color}-700 text-${submenu.color}-500 dark:text-${submenu.color}-500 hover:bg-${submenu.color}-400 dark:hover:bg-${submenu.color}-700 focus:ring-${submenu.color}-800 dark:focus:ring-${submenu.color}-800`]"
+            class="hover:text-white dark:hover:text-white dark:focus:text-white font-medium rounded-md text-sm p-2.5 text-center inline-flex items-center bg-opacity-20 hover:bg-opacity-100 focus:bg-opacity-100 focus:outline-none "
+            :class="[`bg-${submenu.color}-700 text-${submenu.color}-500 dark:text-${submenu.color}-500 hover:bg-${submenu.color}-400 dark:hover:bg-${submenu.color}-700`]"
           >
             <component :is="submenu.icon" v-if="submenu.icon" class="h-6 w-6" />
             <!-- Default icon -->

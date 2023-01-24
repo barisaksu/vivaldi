@@ -29,7 +29,7 @@ const classObject = computed(() => ({
       type="button"
       exact-active-class="text-white dark:text-white"
       aria-current-value="page"
-      class="relative hover:text-white dark:hover:text-white dark:focus:text-white font-medium rounded-md text-sm p-2.5 text-center inline-flex items-center bg-opacity-20 hover:bg-opacity-100 focus:bg-opacity-100 focus:ring-0 focus:outline-none " :class="[classObject, `text-${props.color}-500 dark:text-${props.color}-500 hover:bg-${props.color}-400 dark:hover:bg-${props.color}-700 focus:ring-${props.color}-800 dark:focus:ring-${props.color}-800`]"
+      class="relative hover:text-white dark:hover:text-white dark:focus:text-white font-medium rounded-md text-sm p-2.5 text-center inline-flex items-center bg-opacity-20 hover:bg-opacity-100 focus:bg-opacity-100 focus:outline-none " :class="[classObject, `text-${props.color}-500 dark:text-${props.color}-500 hover:bg-${props.color}-400 dark:hover:bg-${props.color}-700`]"
     >
       <slot name="icon">
         <!-- Default icon -->
@@ -47,7 +47,7 @@ const classObject = computed(() => ({
     <button
       v-else
       type="button"
-      class="hover:text-white dark:hover:text-white dark:focus:text-white font-medium rounded-md text-sm p-2.5 text-center inline-flex items-center bg-opacity-20 hover:bg-opacity-100 focus:bg-opacity-100 focus:ring-2 focus:outline-none " :class="[classObject, `text-${props.color}-500 dark:text-${props.color}-500 hover:bg-${props.color}-400 dark:hover:bg-${props.color}-700 focus:ring-${props.color}-800 dark:focus:ring-${props.color}-800`]"
+      class="hover:text-white dark:hover:text-white dark:focus:text-white font-medium rounded-md text-sm p-2.5 text-center inline-flex items-center bg-opacity-20 hover:bg-opacity-100 focus:bg-opacity-100 focus:outline-none " :class="[classObject, `text-${props.color}-500 dark:text-${props.color}-500 hover:bg-${props.color}-400 dark:hover:bg-${props.color}-700 `]"
     >
       <slot name="icon">
         <!-- Default icon -->
