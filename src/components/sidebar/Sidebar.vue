@@ -49,10 +49,10 @@ const menus = ref([
     color: 'yellow',
     isExpanded: false,
     items: [
-      {
+      /* {
         name: 'musician_tools.guitar_tuner.title',
         icon: GuitarTunerIcon,
-        href: '/tuner',
+        href: '/tools/guitar-tuner',
         color: 'yellow',
       },
       {
@@ -62,15 +62,15 @@ const menus = ref([
         color: 'yellow',
       },
       {
-        name: 'musician_tools.reverb_delay_time_calculator.title',
-        icon: ReverbDelayCalculatorIcon,
-        href: '/settings',
-        color: 'yellow',
-      },
-      {
         name: 'musician_tools.streaming_royalty_calculator.title',
         icon: ReverbDelayCalculatorIcon,
         href: '/settings',
+        color: 'yellow',
+      }, */
+      {
+        name: 'musician_tools.reverb_delay_time_calculator.title',
+        icon: ReverbDelayCalculatorIcon,
+        href: '/tools/rdt-calculator',
         color: 'yellow',
       },
     ],
