@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@7.8.0",
+  "packageManager": "pnpm@7.26.2",
   "scripts": {
     "build": "vite-ssg build",
     "dev": "vite --port 3333 --open",
@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.35.1",
-    "@intlify/vite-plugin-vue-i18n": "^7.0.0",
+    "@intlify/unplugin-vue-i18n": "^0.8.1",
     "@types/markdown-it-link-attributes": "^3.0.1",
     "@types/nprogress": "^0.2.0",
     "@vitejs/plugin-vue": "^4.0.0",
