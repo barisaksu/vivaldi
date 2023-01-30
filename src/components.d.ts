@@ -8,19 +8,13 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     Checkbox: typeof import('./components/ui/Checkbox.vue')['default']
-    copy: typeof import('./components/sidebar/icons/criticalListening copy.vue')['default']
-    CriticalListening: typeof import('./components/sidebar/icons/vivaldiforse/criticalListening.vue')['default']
     CriticalListeningIcon: typeof import('./components/sidebar/icons/vivaldiforse/CriticalListeningIcon.vue')['default']
     Drawer: typeof import('./components/ui/Drawer.vue')['default']
     ExerciseAppBar: typeof import('./components/ExerciseAppBar.vue')['default']
     ExerciseCard: typeof import('./components/ExerciseCard.vue')['default']
-    GuitarTuner: typeof import('./components/sidebar/icons/musiciantools/GuitarTuner.vue')['default']
     GuitarTunerIcon: typeof import('./components/sidebar/icons/musiciantools/GuitarTunerIcon.vue')['default']
     IntervalTrainingIcon: typeof import('./components/sidebar/icons/exercises/IntervalTrainingIcon.vue')['default']
-    MegaMenu: typeof import('./components/sidebar/MegaMenu.vue')['default']
-    MegaMenuItem: typeof import('./components/sidebar/MegaMenuItem.vue')['default']
     MetronomeIcon: typeof import('./components/sidebar/icons/musiciantools/MetronomeIcon.vue')['default']
-    Npiano: typeof import('./components/npiano.vue')['default']
     Piano: typeof import('./components/Piano.vue')['default']
     PitchTrainingIcon: typeof import('./components/sidebar/icons/exercises/PitchTrainingIcon.vue')['default']
     Radio: typeof import('./components/ui/Radio.vue')['default']
@@ -33,9 +27,7 @@ declare module '@vue/runtime-core' {
     SponsorIncentive: typeof import('./components/SponsorIncentive.vue')['default']
     Sponsors: typeof import('./components/Sponsors.vue')['default']
     Tools: typeof import('./components/sidebar/icons/musiciantools/tools.vue')['default']
-    Vivaldiforse: typeof import('./components/sidebar/icons/vivaldiforse/vivaldiforse.vue')['default']
     VivaldiForSEIcon: typeof import('./components/sidebar/icons/vivaldiforse/VivaldiForSEIcon.vue')['default']
     XMenu: typeof import('./components/sidebar/XMenu.vue')['default']
-    XMenuItem: typeof import('./components/sidebar/XMenuItem.vue')['default']
   }
 }

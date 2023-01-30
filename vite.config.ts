@@ -134,7 +134,6 @@ export default defineConfig({
       inline: ['@vue', '@vueuse', 'vue-demi'],
     },
   },
-
   // https://github.com/antfu/vite-ssg
   ssgOptions: {
     script: 'async',
