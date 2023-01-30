@@ -1,6 +1,34 @@
 <script setup lang="ts">
+const props = withDefaults(defineProps<Props>(), {
+  tooltipPosition: 'right',
+  href: '',
+  showSubMenux: false,
+})
+
+const emit = defineEmits(['isExpanded'])
+
+const router = useRouter()
+
+router.afterEach((to, from) => {
+  console.log('to', to)
+  console.log('from', from)
+  if (to.matched[0].path.includes(props.parent)) {
+    console.log('aftereach props parent', props.parent)
+    console.log('aftereach props index', props.index)
+    if (props.showSubMenux === false)
+      emit('isExpanded', props.index)
+  }
+})
+
+if (router.currentRoute.value.matched[0].path.includes(props.parent)) {
+  console.log('props parent', props.parent)
+  console.log('props index', props.index)
+  emit('isExpanded', props.index)
+}
+
 interface Props {
   index: number
+  parent: string
   color?: string
   icon?: any
   justHoverColor?: boolean
@@ -10,14 +38,6 @@ interface Props {
   showSubMenux?: boolean
   subMenus?: Array<any>
 }
-
-const props = withDefaults(defineProps<Props>(), {
-  tooltipPosition: 'right',
-  href: '',
-  showSubMenux: false,
-})
-
-const emit = defineEmits(['isExpanded'])
 
 const { t } = useI18n()
 const classObject = computed(() => ({
@@ -43,13 +63,14 @@ watch(
     >
       <button
         class="hover:text-white dark:hover:text-white dark:focus:text-white font-medium rounded-md text-sm p-2.5 text-center inline-flex items-center bg-opacity-20 hover:bg-opacity-100 focus:bg-opacity-100  focus:outline-none"
-        :class="[classObject, `text-${props.color}-500 dark:text-${props.color}-500 hover:bg-${props.color}-400 dark:hover:bg-${props.color}-700 focus:ring-${props.color}-800 dark:focus:ring-${props.color}-800`, { 'bg-opacity-100 dark:text-white': showSubMenu }]" @click="emit('isExpanded', index)"
+        :class="[classObject, `text-${props.color}-500 dark:text-${props.color}-500 hover:bg-${props.color}-400 dark:hover:bg-${props.color}-700 focus:ring-${props.color}-800 dark:focus:ring-${props.color}-800`, { 'bg-opacity-100 dark:text-white': showSubMenu }]"
+        @click="emit('isExpanded', index)"
       >
         <component :is="props.icon" v-if="props.icon" class="h-6 w-6" />
         <!-- Default icon -->
         <svg
-          v-else xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-          stroke-width="1.5" stroke="currentColor" class="w-6 h-6"
+          v-else xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" class="w-6 h-6"
         >
           <path
             stroke-linecap="round" stroke-linejoin="round"
@@ -65,9 +86,7 @@ watch(
         --popper-theme-background-color-hover: var(--color-${submenu.color}-700); margin: 0; border: none;`"
         >
           <RouterLink
-            :to="submenu.href"
-            type="button"
-            exact-active-class="text-white dark:text-white"
+            :to="submenu.href" type="button" exact-active-class="text-white dark:text-white"
             aria-current-value="page"
             class="hover:text-white dark:hover:text-white dark:focus:text-white font-medium rounded-md text-sm p-2.5 text-center inline-flex items-center bg-opacity-20 hover:bg-opacity-100 focus:bg-opacity-100 focus:outline-none "
             :class="[`bg-${submenu.color}-700 text-${submenu.color}-500 dark:text-${submenu.color}-500 hover:bg-${submenu.color}-400 dark:hover:bg-${submenu.color}-700`]"
@@ -75,8 +94,8 @@ watch(
             <component :is="submenu.icon" v-if="submenu.icon" class="h-6 w-6" />
             <!-- Default icon -->
             <svg
-              v-else xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-              stroke-width="1.5" stroke="currentColor" class="w-6 h-6"
+              v-else xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="w-6 h-6"
             >
               <path
                 stroke-linecap="round" stroke-linejoin="round"
@@ -125,15 +144,16 @@ a.router-link-active {
 
 .borusan {
   position: relative;
-  &:after{
+
+  &:after {
     content: "";
     position: absolute;
     bottom: -15px;
-  left: calc(50% - 10px);
-  border-top: v-bind("`5px solid var(--color-${props.color}-700)`");
-  border-bottom: 10px solid transparent;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
+    left: calc(50% - 10px);
+    border-top: v-bind("`5px solid var(--color-${props.color}-700)`");
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
   }
 }
 </style>

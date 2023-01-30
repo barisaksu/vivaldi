@@ -4,7 +4,7 @@ import { CriticalListeningIcon, VivaldiForSEIcon } from './icons/vivaldiforse/in
 import { GuitarTunerIcon, MetronomeIcon, ReverbDelayCalculatorIcon, ToolsIcon } from './icons/musiciantools/index'
 import { IntervalTrainingIcon, PitchTrainingIcon } from './icons/exercises/index'
 import GlobalSettings from '~/pages/settings.vue'
-
+const router = useRouter()
 const { t } = useI18n()
 
 const showSettings = ref(false)
@@ -12,8 +12,9 @@ const showSettings = ref(false)
 const menus = ref([
   {
     name: 'sidebar.exercises',
+    parent_id: '/exercises',
     color: 'blue',
-    isExpanded: true,
+    isExpanded: false,
     items: [
       {
         name: 'exercises.pitch_training.title',
@@ -31,6 +32,7 @@ const menus = ref([
   },
   {
     name: 'sidebar.vivaldi_for_se',
+    parent_id: '/vivaldi-for-se',
     icon: VivaldiForSEIcon,
     color: 'red',
     isExpanded: false,
@@ -45,6 +47,7 @@ const menus = ref([
   },
   {
     name: 'sidebar.musician_tools',
+    parent_id: '/tools',
     icon: ToolsIcon,
     color: 'yellow',
     isExpanded: false,
@@ -127,7 +130,7 @@ onMounted(() => {
     <div class="flex-1 w-full h-2/3 text-center">
       <ul class="flex h-full flex-col space-y-2 overflow-x-hidden dene">
         <li v-for="(menu, index) in menus" :key="index">
-          <XMenu :tooltip="menu.name" :color="menu.color" :show-sub-menux="menu.isExpanded" :sub-menus="menu.items" :icon="menu.icon" :index="index" @is-expanded="(n: any) => handleAccordion(n)" />
+          <XMenu :parent="menu.parent_id" :tooltip="menu.name" :color="menu.color" :show-sub-menux="menu.isExpanded" :sub-menus="menu.items" :icon="menu.icon" :index="index" @is-expanded="(n: any) => handleAccordion(n)" />
         </li>
       </ul>
     </div>
