@@ -62,6 +62,20 @@ exercises:
 vivaldiforse:
   critical_listening:
     title: Kritik Dinleme
+  tone_guessing:
+    title: Ton Tahmini
+    description: Bu egzersiz, müzikal kulak geliştirmeye yardımcı olan etkili bir yöntemdir. Tonları doğru bir şekilde tanımayı ve ayırt etmeyi öğrenmenize yardımcı olacak ve müzikal yeteneklerinizi geliştirmenize katkı sağlayacaktır.
+    focus_and_listen: Odaklan ve Dinle
+    focus_and_listen_description: Egzersiz başladığında, 30 saniye boyunca bir müzik parçası çalacak. Bu süre boyunca müzik parçasının tonunu bulmaya çalışın. Odaklanın ve müziği dinlerken kulaklarınızı açık tutun.
+    loading_message: Hazırlan!
+    choose_your_answer: Cevabını Seç
+    choose_your_answer_description: 30 saniyenin sonunda, müzik duracak ve tonu tahmin etmeniz istenecek. Cevabınızı seçin ve sonuçlarınızı görmek için Cevapla butonuna tıklayın. Başlamaya hazırsanız, şimdi başlat butonuna tıklayabilirsiniz.
+    whats_your_guess: Tahminin nedir?
+    i_dont_know: Bilmiyorum
+    wrong_screen_message: Hay aksi! Cevap {tone} olmalıydı.
+    wrong_screen_btn: Hadi tekrar deneyelim!
+    win_screen_message: Harikasın! Altın notayı hakkettin!
+    win_screen_btn: Hadi sonraki şarkıya geçelim!
 musician_tools:
   guitar_tuner:
     title: Gitar Akortlayıcı

@@ -1,10 +1,18 @@
 <script setup lang="ts">
 import { Cog6ToothIcon, SparklesIcon } from '@heroicons/vue/24/outline/index.js'
 import { CriticalListeningIcon, VivaldiForSEIcon } from './icons/vivaldiforse/index'
-import { GuitarTunerIcon, MetronomeIcon, ReverbDelayCalculatorIcon, ToolsIcon } from './icons/musiciantools/index'
+import { ReverbDelayCalculatorIcon, ToolsIcon } from './icons/musiciantools/index'
 import { IntervalTrainingIcon, PitchTrainingIcon } from './icons/exercises/index'
 import GlobalSettings from '~/pages/settings.vue'
-const router = useRouter()
+
+// make shallowRef icons
+const pitchTrainingIcon = shallowRef(PitchTrainingIcon)
+const intervalTrainingIcon = shallowRef(IntervalTrainingIcon)
+const criticalListeningIcon = shallowRef(CriticalListeningIcon)
+const vivaldiForSEIcon = shallowRef(VivaldiForSEIcon)
+const reverbDelayCalculatorIcon = shallowRef(ReverbDelayCalculatorIcon)
+const toolsIcon = shallowRef(ToolsIcon)
+
 const { t } = useI18n()
 
 const showSettings = ref(false)
@@ -18,13 +26,13 @@ const menus = ref([
     items: [
       {
         name: 'exercises.pitch_training.title',
-        icon: PitchTrainingIcon,
+        icon: pitchTrainingIcon,
         href: '/exercises/pitch-training',
         color: 'blue',
       },
       {
         name: 'exercises.interval_training.title',
-        icon: IntervalTrainingIcon,
+        icon: intervalTrainingIcon,
         href: '/exercises/interval-training',
         color: 'blue',
       },
@@ -32,15 +40,21 @@ const menus = ref([
   },
   {
     name: 'sidebar.vivaldi_for_se',
-    parent_id: '/vivaldi-for-se',
-    icon: VivaldiForSEIcon,
+    parent_id: '/vivaldiforse',
+    icon: vivaldiForSEIcon,
     color: 'red',
     isExpanded: false,
     items: [
-      {
+      /* {
         name: 'vivaldiforse.critical_listening.title',
-        icon: CriticalListeningIcon,
+        icon: criticalListeningIcon,
         href: '/settings',
+        color: 'red',
+      }, */
+      {
+        name: 'vivaldiforse.tone_guessing.title',
+        icon: criticalListeningIcon,
+        href: '/vivaldiforse/tonality-guessing',
         color: 'red',
       },
     ],
@@ -48,7 +62,7 @@ const menus = ref([
   {
     name: 'sidebar.musician_tools',
     parent_id: '/tools',
-    icon: ToolsIcon,
+    icon: toolsIcon,
     color: 'yellow',
     isExpanded: false,
     items: [
@@ -72,7 +86,7 @@ const menus = ref([
       }, */
       {
         name: 'musician_tools.reverb_delay_time_calculator.title',
-        icon: ReverbDelayCalculatorIcon,
+        icon: reverbDelayCalculatorIcon,
         href: '/tools/rdt-calculator',
         color: 'yellow',
       },
@@ -104,18 +118,10 @@ onMounted(() => {
   <div
     class="flex h-screen min-w-[3.5rem] flex-col items-center justify-start border-r bg-gray-100 border-gray-200 dark:border-gray-700 dark:bg-gray-800 py-2"
   >
-    <Transition
-      enter-active-class="animate-pulse"
-      leave-active-class="animate-bounce"
-      appear
-    >
+    <Transition enter-active-class="animate-pulse" leave-active-class="animate-bounce" appear>
       <router-link to="/" class="pb-2 md:pb-4">
         <svg
-          class="mt-2 h-6 w-auto hover:animate-spin"
-          width="108"
-          height="69"
-          viewBox="0 0 108 69"
-          fill="none"
+          class="mt-2 h-6 w-auto hover:animate-spin" width="108" height="69" viewBox="0 0 108 69" fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -130,7 +136,10 @@ onMounted(() => {
     <div class="flex-1 w-full h-2/3 text-center">
       <ul class="flex h-full flex-col space-y-2 overflow-x-hidden dene">
         <li v-for="(menu, index) in menus" :key="index">
-          <XMenu :parent="menu.parent_id" :tooltip="menu.name" :color="menu.color" :show-sub-menux="menu.isExpanded" :sub-menus="menu.items" :icon="menu.icon" :index="index" @is-expanded="(n: any) => handleAccordion(n)" />
+          <XMenu
+            :parent="menu.parent_id" :tooltip="menu.name" :color="menu.color" :show-sub-menux="menu.isExpanded"
+            :sub-menus="menu.items" :icon="menu.icon" :index="index" @is-expanded="(n: any) => handleAccordion(n)"
+          />
         </li>
       </ul>
     </div>
@@ -144,11 +153,7 @@ onMounted(() => {
         </SidebarButton>
       </li>
       <li>
-        <SidebarButton
-          :tooltip="t('sidebar.global_settings')"
-          color="slate"
-          @click="showSettings = !showSettings"
-        >
+        <SidebarButton :tooltip="t('sidebar.global_settings')" color="slate" @click="showSettings = !showSettings">
           <template #icon>
             <Cog6ToothIcon class="h-6 w-6" />
           </template>
@@ -162,6 +167,7 @@ onMounted(() => {
 .dene {
   overflow: overlay;
 }
+
 *::-webkit-scrollbar {
   display: block;
   width: 1px;

@@ -253,6 +253,7 @@ declare global {
   const useToNumber: typeof import('@vueuse/core')['useToNumber']
   const useToString: typeof import('@vueuse/core')['useToString']
   const useToggle: typeof import('@vueuse/core')['useToggle']
+  const useTonalityGuessingStore: typeof import('./store/tonalityguessing.store')['useTonalityGuessingStore']
   const useTone: typeof import('./composables/tone')['useTone']
   const useTransition: typeof import('@vueuse/core')['useTransition']
   const useUrlSearchParams: typeof import('@vueuse/core')['useUrlSearchParams']
@@ -540,6 +541,7 @@ declare module 'vue' {
     readonly useToNumber: UnwrapRef<typeof import('@vueuse/core')['useToNumber']>
     readonly useToString: UnwrapRef<typeof import('@vueuse/core')['useToString']>
     readonly useToggle: UnwrapRef<typeof import('@vueuse/core')['useToggle']>
+    readonly useTonalityGuessingStore: UnwrapRef<typeof import('./store/tonalityguessing.store')['useTonalityGuessingStore']>
     readonly useTone: UnwrapRef<typeof import('./composables/tone')['useTone']>
     readonly useTransition: UnwrapRef<typeof import('@vueuse/core')['useTransition']>
     readonly useUrlSearchParams: UnwrapRef<typeof import('@vueuse/core')['useUrlSearchParams']>

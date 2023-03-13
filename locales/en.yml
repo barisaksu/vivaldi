@@ -62,6 +62,20 @@ exercises:
 vivaldiforse:
   critical_listening:
     title: Critical Listening
+  tone_guessing:
+    title: Tone Guessing
+    description: This exercise is an effective method to help develop your musical ear. It will help you learn to recognize and distinguish tones accurately, and contribute to improving your musical abilities.
+    focus_and_listen: Focus and Listen
+    focus_and_listen_description: When the exercise starts, a music piece will play for 30 seconds. Try to find the tone of the music piece during this time. Focus and keep your ears open while listening to the music.
+    loading_message: Get Ready!
+    choose_your_answer: Choose Your Answer
+    choose_your_answer_description: At the end of 30 seconds, the music will stop and you will be asked to guess the tone. Choose your answer and click the Answer button to see your results. If you're ready to start, you can click the Start button now.
+    whats_your_guess: What's Your Guess?
+    i_dont_know: I Don't Know
+    wrong_screen_message: Oops! The answer should have been {tone}.
+    wrong_screen_btn: Let's Try Again!
+    win_screen_message: Great Job! You've earned the Golden Note!
+    win_screen_btn: Let's Move on to the Next Song!
 musician_tools:
   guitar_tuner:
     title: Guitar Tuner
