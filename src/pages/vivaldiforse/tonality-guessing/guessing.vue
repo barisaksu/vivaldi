@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia'
-import { Vue3Lottie } from 'vue3-lottie'
-import 'vue3-lottie/dist/style.css'
+// import Vue3Lottie from 'vue3-lottie'
+// import 'vue3-lottie/dist/style.css'
 import toddlerNo from '~/lotties/toddlerno.json'
 import goldenNoteLottie from '~/lotties/goldennote.json'
 import { useTonalityGuessingStore } from '~/store/tonalityguessing.store'

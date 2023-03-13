@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import axios from 'axios'
-import { Vue3Lottie } from 'vue3-lottie'
-import 'vue3-lottie/dist/style.css'
+// import Vue3Lottie from 'vue3-lottie'
+// import 'vue3-lottie/dist/style.css'
 import { storeToRefs } from 'pinia'
 import loadingLottie from '~/lotties/loading.json'
 
