@@ -7,7 +7,7 @@ const midiStore = useMidiStore()
 
 const { inputs, midi_input } = storeToRefs(midiStore)
 
-const mode = reactive(isDark)
+// const mode = reactive(isDark)
 
 const globalSettings = useStorage('globalSettings', {
   lang: 'en',
@@ -42,7 +42,7 @@ watch(midi_input, (value) => {
       </option>
     </Select>
 
-    <Checkbox v-model:checked="mode" :label="t('button.toggle_dark')" />
+    <!-- <Checkbox v-model:checked="mode" :label="t('button.toggle_dark')" /> -->
   </div>
 </template>
 
