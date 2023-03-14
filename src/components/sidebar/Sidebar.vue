@@ -133,7 +133,7 @@ onMounted(() => {
       </router-link>
     </Transition>
     <!-- Exercises -->
-    <div class="flex-1 w-full h-2/3 text-center">
+    <div class="flex-1 w-full h-2/4 text-center">
       <ul class="flex h-full flex-col space-y-2 overflow-x-hidden dene">
         <li v-for="(menu, index) in menus" :key="index">
           <XMenu
