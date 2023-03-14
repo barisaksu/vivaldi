@@ -74,7 +74,7 @@ function startCountdown() {
             {{ currentSong.artist }}
           </h4>
           <a class="-mt-2" target="_blank" :href="`https://open.spotify.com/track/${currentSong.track_id}`">
-            <img class="w-28" src="https://tonalify.app/img/icons/listen.png">
+            <img class="w-28" src="/listenOnSpotify.png">
           </a>
         </div>
       </div>
