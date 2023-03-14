@@ -14,12 +14,12 @@ const props = withDefaults(defineProps<Props>(), {
   <div class="group flex flex-col w-full">
     <RouterLink
       :to="props.to"
-      class="block rounded-xl border border-gray-800 bg-gray-900 p-8 group-hover:shadow-inner group-hover:shadow-blue-600 flex-auto"
+      class="block rounded-xl border border-blue-200 dark:border-gray-800 bg-blue-100 dark:bg-gray-900 p-8 group-hover:shadow-inner group-hover:shadow-blue-600 flex-auto"
       href=""
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="h-10 w-10 text-blue-400"
+        class="h-10 w-10 text-black dark:text-blue-400"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -36,11 +36,11 @@ const props = withDefaults(defineProps<Props>(), {
         />
       </svg>
 
-      <h3 class="mt-3 text-xl font-bold text-white">
+      <h3 class="mt-3 text-xl font-bold text-black dark:text-white">
         {{ props.title }}
       </h3>
 
-      <p class="mt-4 text-sm font-normal text-gray-300">
+      <p class="mt-4 text-sm font-normal text-gray-800 dark:text-gray-300">
         <slot> Coming Soon </slot>
       </p>
     </RouterLink>
