@@ -16,7 +16,7 @@ const { t } = useI18n()
         {{ t('site.shortDescription') }}
       </p>
 
-      <div class="columns-1 md:columns-2 gap-8 space-y-4 pb-12 text-start">
+      <div class="flex gap-2 lg:gap-8  pb-12">
         <ExerciseCard to="/exercises/pitch-training" :title="$t('exercises.pitch_training.title')">
           {{ $t('exercises.pitch_training.description') }}
         </ExerciseCard>

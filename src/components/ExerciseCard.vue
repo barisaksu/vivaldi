@@ -11,10 +11,10 @@ const props = withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <div class="group">
+  <div class="group flex flex-col w-full">
     <RouterLink
       :to="props.to"
-      class="block rounded-xl border border-gray-800 bg-gray-900 p-8 group-hover:shadow-inner group-hover:shadow-blue-600"
+      class="block rounded-xl border border-gray-800 bg-gray-900 p-8 group-hover:shadow-inner group-hover:shadow-blue-600 flex-auto"
       href=""
     >
       <svg
