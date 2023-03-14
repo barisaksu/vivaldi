@@ -57,4 +57,14 @@ onMounted(() => {
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+ @media screen and (max-width: 1024px)  {
+  .lottie-animation-container {
+    width: 200px;
+    height: 200px;
+    background-color: var(--lottie-animation-container-background-color);
+    overflow: hidden;
+    margin: 0 auto;
+}
+}
+</style>

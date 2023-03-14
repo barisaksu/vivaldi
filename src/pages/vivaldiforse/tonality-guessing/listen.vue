@@ -51,8 +51,8 @@ function startCountdown() {
   <div class="flex w-full relative">
     <div class="flex flex-col justify-center items-center text-center w-full">
       <!-- {{ currentSong }} -->
-      <audio ref="player" :src="currentSong.preview_url" controls autoplay crossorigin="anonymous" class="hidden" @playing="startCountdown" />
-      <canvas ref="canvas" />
+      <audio ref="player" loop :src="currentSong.preview_url" controls autoplay crossorigin="anonymous" class="hidden" @playing="startCountdown" />
+      <canvas ref="canvas" class="flex w-full lg:w-auto" />
     </div>
 
     <div class="absolute top-0 left-0 mt-6">
@@ -63,7 +63,7 @@ function startCountdown() {
       </div>
     </div>
 
-    <div class="absolute bottom-0 left-0 mb-4">
+    <div class="absolute bottom-0 left-0 mb-4 scale-50 origin-bottom-left lg:scale-100">
       <div class="flex justify-between items-center space-x-4 bg-green-600 rounded-lg p-4">
         <img class="w-28" :src="currentSong.image_url">
         <div>

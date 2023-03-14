@@ -92,13 +92,13 @@ function shuffleArray(array) {
         {{ $t('vivaldiforse.tone_guessing.wrong_screen_btn') }}
       </button>
     </div>
-    <div v-else-if="isCorrect" class="flex flex-col justify-center items-center w-1/2 space-y-8">
+    <div v-else-if="isCorrect" class="flex flex-col justify-center items-center w-full space-y-4">
       <Vue3Lottie :animation-data="goldenNoteLottie" loop="false" :height="300" :width="300" />
       <p class="font-bold text-xl text-yellow-400">
         {{ $t('vivaldiforse.tone_guessing.win_screen_message') }}
       </p>
 
-      <button class="bg-green-500 hover:bg-green-700 text-green-100 font-bold py-2 px-4 rounded w-1/2" @click="isLoading = true">
+      <button class="bg-green-500 hover:bg-green-700 text-green-100 font-bold py-2 px-4 rounded w-1/2 lg:w-1/4" @click="isLoading = true">
         {{ $t('vivaldiforse.tone_guessing.win_screen_btn') }}
       </button>
     </div>
@@ -111,7 +111,7 @@ function shuffleArray(array) {
           {{ noteKeyMap[index] }} {{ currentSong.mode === 1 ? "Major" : "Minor" }}
         </div>
       </div>
-      <div class="rounded-lg hover:bg-red-900 hover:-translate-y-4 duration-300 cursor-pointer transition-all p-12 text-center justify-self-center text-2xl font-bold border-2 border-red-700 text-red-700 hover:text-white">
+      <div class="rounded-lg hover:bg-red-900 hover:-translate-y-4 duration-300 cursor-pointer transition-all p-8 text-center justify-self-center text-2xl font-bold border-2 border-red-700 text-red-700 hover:text-white">
         {{ $t('vivaldiforse.tone_guessing.i_dont_know') }}
       </div>
     </div>
@@ -128,4 +128,14 @@ function shuffleArray(array) {
     </div> -->
 </template>
 
-<style scoped></style>
+<style scoped>
+ @media screen and (max-width: 1024px)  {
+  .lottie-animation-container {
+    width: 200px;
+    height: 200px;
+    background-color: var(--lottie-animation-container-background-color);
+    overflow: hidden;
+    margin: 0 auto;
+}
+}
+</style>
