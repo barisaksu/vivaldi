@@ -23,3 +23,7 @@
   autoLaunch = true # a Boolean value that determines if Netlify Dev launches the local server address in your browser
   envFiles = [".env"] # The env files to use, ordered by priority (left - highest, right - lowest)
   # to start an https server instead of an http one, configure a certificate and key files
+
+  [functions]
+  node_bundler = "esbuild"
+  external_node_modules = ["spotify-api.js", "@supabase/supabase-js"]
