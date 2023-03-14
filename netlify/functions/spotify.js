@@ -1,5 +1,5 @@
 import { createClient } from '@supabase/supabase-js'
-const { Client, Cache } = require('spotify-api.js')
+const { Client } = require('spotify-api.js').default
 
 require('dotenv').config()
 
