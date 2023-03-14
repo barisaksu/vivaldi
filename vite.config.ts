@@ -91,9 +91,24 @@ export default defineConfig({
       manifest: {
         name: 'Vivaldi',
         short_name: 'Vivaldi',
-        theme_color: '#ffffff',
+        theme_color: '#1F2937',
         orientation: 'landscape',
         icons: [
+          {
+            src: '/pwa-48x48.png',
+            sizes: '48x48',
+            type: 'image/png',
+          },
+          {
+            src: '/pwa-72x72.png',
+            sizes: '72x72',
+            type: 'image/png',
+          },
+          {
+            src: '/pwa-96x96.png',
+            sizes: '96x96',
+            type: 'image/png',
+          },
           {
             src: '/pwa-192x192.png',
             sizes: '192x192',
