@@ -92,27 +92,9 @@ export default defineConfig({
         name: 'Vivaldi',
         short_name: 'Vivaldi',
         theme_color: '#1F2937',
-<<<<<<< HEAD
         background_color: '#1F2937',
-=======
->>>>>>> b5d9b903fa3a3b0cd6fd49efdbf694ebe45a5827
         orientation: 'landscape',
         icons: [
-          {
-            src: '/pwa-48x48.png',
-            sizes: '48x48',
-            type: 'image/png',
-          },
-          {
-            src: '/pwa-72x72.png',
-            sizes: '72x72',
-            type: 'image/png',
-          },
-          {
-            src: '/pwa-96x96.png',
-            sizes: '96x96',
-            type: 'image/png',
-          },
           {
             src: '/pwa-192x192.png',
             sizes: '192x192',
