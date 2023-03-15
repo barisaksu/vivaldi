@@ -1,5 +1,6 @@
 site:
   shortDescription: Tamamen ücretsiz ve açık kaynak kodlu müzikal kulak geliştirme uygulaması.
+  device_orientation: Lütfen cihazını yatay modda kullanın
 button:
   about: Hakkında
   back: Geri

@@ -24,6 +24,19 @@ useHead({
   ],
 })
 
+const { isSupported, orientation } = useScreenOrientation()
+
+const showScreenOrientation = ref(false)
+
+watchEffect(() => {
+  if (isSupported.value) {
+    if (orientation.value === 'landscape-primary' || orientation.value === 'landscape-secondary')
+      showScreenOrientation.value = false
+    else
+      showScreenOrientation.value = true
+  }
+})
+
 onMounted(() => {
   if (localStorage.getItem('globalSettings')) {
     const lang = JSON.parse(localStorage.getItem('globalSettings') as string).lang
@@ -35,5 +48,6 @@ onMounted(() => {
 </script>
 
 <template>
+  <ScreenOrientation v-if="showScreenOrientation" />
   <RouterView />
 </template>

@@ -1,5 +1,6 @@
 site:
   shortDescription: Completely free and open source musical ear training application.
+  device_orientation: Please use your device in landscape mode
 button:
   about: About
   back: Back

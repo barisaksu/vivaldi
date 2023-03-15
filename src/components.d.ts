@@ -21,6 +21,7 @@ declare module '@vue/runtime-core' {
     ReverbDelayCalculatorIcon: typeof import('./components/sidebar/icons/musiciantools/ReverbDelayCalculatorIcon.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    ScreenOrientation: typeof import('./components/ScreenOrientation.vue')['default']
     Select: typeof import('./components/ui/Select.vue')['default']
     Sidebar: typeof import('./components/sidebar/Sidebar.vue')['default']
     SidebarButton: typeof import('./components/sidebar/SidebarButton.vue')['default']
