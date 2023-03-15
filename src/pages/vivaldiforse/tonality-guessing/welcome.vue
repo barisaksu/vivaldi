@@ -20,6 +20,12 @@ const cardData = [
     number: 2,
   },
 ]
+
+const { t } = useI18n()
+
+useHead({
+  title: `${t('vivaldiforse.tone_guessing.title')} - ${t('sidebar.vivaldi_for_se')}`,
+})
 </script>
 
 <template>

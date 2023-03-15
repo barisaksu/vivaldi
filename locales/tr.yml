@@ -19,7 +19,7 @@ support:
 sidebar:
   exercises: Egzersizler
   vivaldi_for_se: Ses Mühendisleri için Vivaldi
-  musician_tools: Araçlar
+  musician_tools: Müzisyen Araçları
   whats_news: Yenilikler
   global_settings: Genel Ayarlar
 exercises:
@@ -33,6 +33,7 @@ exercises:
     replay: Yeniden Dinle
     correct_answer: Vay canına, çok iyisin. Devam edelim.
     incorrect_answer: Endişelenme, tekrar dene.
+    loading: Yükleniyor..
   pitch_training:
     title: Tek Ses Alıştırması
     description: Sesleri tanıma becerinizi geliştirin.

@@ -45,6 +45,12 @@ const reverbSizes = computed(() => {
 function setBPM(bpmValue: number) {
   bpm.value = bpmValue
 }
+
+const { t } = useI18n()
+
+useHead({
+  title: `${t('musician_tools.reverb_delay_time_calculator')} - ${t('sidebar.musician_tools')}`,
+})
 </script>
 
 <template>

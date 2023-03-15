@@ -62,6 +62,11 @@ watch(isCorrect, (newVal) => {
 
 const showSettings = ref(false)
 provide('showSettings', showSettings) // exerciseAppBar.vue
+
+const { t } = useI18n()
+useHead({
+  title: `${t('exercises.interval_training.title')} - ${t('sidebar.exercises')}`,
+})
 </script>
 
 <template>

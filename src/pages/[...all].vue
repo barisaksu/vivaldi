@@ -1,5 +1,10 @@
 <script setup lang="ts">
 const router = useRouter()
+
+const { t } = useI18n()
+useHead({
+  title: `404 ${t('not-found')}`,
+})
 </script>
 
 <template>

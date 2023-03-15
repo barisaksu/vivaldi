@@ -45,6 +45,12 @@ function startCountdown() {
     }
   }, 1000)
 }
+
+const { t } = useI18n()
+
+useHead({
+  title: `${t('vivaldiforse.tone_guessing.focus_and_listen')} | ${t('vivaldiforse.tone_guessing.title')} - ${t('sidebar.vivaldi_for_se')}`,
+})
 </script>
 
 <template>

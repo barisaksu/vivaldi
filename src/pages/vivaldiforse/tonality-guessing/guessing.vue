@@ -77,6 +77,12 @@ function shuffleArray(array) {
   }
   return shuffledArray
 }
+
+const { t } = useI18n()
+
+useHead({
+  title: `${t('vivaldiforse.tone_guessing.choose_your_answer')} | ${t('vivaldiforse.tone_guessing.title')} - ${t('sidebar.vivaldi_for_se')}`,
+})
 </script>
 
 <template>

@@ -33,6 +33,11 @@ watch(answer, (val) => {
     }, 1000)
   }
 })
+
+const { t } = useI18n()
+useHead({
+  title: `${t('exercises.pitch_training.title')} - ${t('sidebar.exercises')}`,
+})
 </script>
 
 <template>

@@ -46,6 +46,12 @@ onMounted(() => {
   // show loading screen while fetching data from getSpotify()
   getSpotify()
 })
+
+const { t } = useI18n()
+
+useHead({
+  title: `${t('exercises.common.loading')} | ${t('vivaldiforse.tone_guessing.title')} - ${t('sidebar.vivaldi_for_se')}`,
+})
 </script>
 
 <template>

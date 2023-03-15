@@ -19,7 +19,7 @@ support:
 sidebar:
   exercises: Exercises
   vivaldi_for_se: Vivaldi for Sound Engineers
-  musician_tools: Tools
+  musician_tools: Musician Tools
   whats_news: What's New
   global_settings: Global Settings
 exercises:
@@ -33,6 +33,7 @@ exercises:
     replay: Replay
     correct_answer: Wow, you are so good. Lets continue.
     incorrect_answer: No worries, try again.
+    loading: Loading..
   pitch_training:
     title: Pitch Training
     description: Improve your ability to recognize sounds.
