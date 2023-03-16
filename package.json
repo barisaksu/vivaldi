@@ -16,6 +16,8 @@
   },
   "dependencies": {
     "@heroicons/vue": "^2.0.13",
+    "@sentry/tracing": "^7.43.0",
+    "@sentry/vue": "^7.43.0",
     "@supabase/supabase-js": "^2.7.0",
     "@tonaljs/tonal": "^4.8.0",
     "@vueuse/core": "^9.6.0",
