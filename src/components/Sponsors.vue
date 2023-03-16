@@ -13,12 +13,30 @@ const { t } = useI18n()
     <p class="mb-12 text-lg text-gray-400">
       {{ t('support.sponsors_description') }}
     </p>
-    <div class="grid grid-cols-2 lg:grid-cols-8">
-      <a href="https://www.netlify.com"> <img src="https://www.netlify.com/v3/img/components/netlify-color-bg.svg" alt="Deploys by Netlify"> </a>
+
+    <div>
+      <div class="flex gap-2">
+        <div class="col-span-1">
+          <a href="https://www.netlify.com"> <img src="https://www.netlify.com/v3/img/components/netlify-color-bg.svg" class="logoHeight" alt="Deploys by Netlify"> </a>
+        </div>
+        <div class="col-span-1">
+          <a href="https://sentry.io">
+            <img src="/sponsors/sentryio.svg" class="logoHeight" alt="Sentry">
+          </a>
+        </div>
+      </div>
     </div>
+
+    <!-- <div class="grid grid-cols-2 lg:grid-cols-8">
+      <a href="https://www.netlify.com"> <img src="https://www.netlify.com/v3/img/components/netlify-color-bg.svg" alt="Deploys by Netlify"> </a>
+    </div> -->
   </section>
 </template>
 
-<style scoped>
-
+<style lang="scss" scoped>
+.logoHeight {
+  @apply hover:scale-105 transition-all duration-300 rounded-lg;
+  width: 114px;
+  height: 50px;
+}
 </style>
