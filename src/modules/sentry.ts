@@ -2,7 +2,10 @@ import * as Sentry from '@sentry/vue'
 import { BrowserTracing } from '@sentry/tracing'
 import type { UserModule } from '~/types'
 
-export const install: UserModule = ({ app, router }) => {
+export const install: UserModule = ({ app, router, isClient }) => {
+  if (!isClient)
+    return
+
   Sentry.init({
     app,
     dsn: 'https://c0a276cc91904822aff4856cedac3a97@o4504848494559232.ingest.sentry.io/4504848498819072',
