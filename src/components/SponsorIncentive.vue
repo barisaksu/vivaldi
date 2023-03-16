@@ -6,7 +6,7 @@ interface Props {
 
 const props = withDefaults(defineProps<Props>(), {
   patreon: 'https://www.patreon.com/barisaksu',
-  email: 'mailto:baris@barisaksu.com',
+  email: 'mailto:vivaldi@barisaksu.com',
 })
 
 const { t } = useI18n()
