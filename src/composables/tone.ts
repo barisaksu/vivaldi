@@ -1,6 +1,7 @@
 import * as Tone from 'tone'
 
 export function useTone() {
+  const isLoaded = ref<boolean>(false)
   const sampler = new Tone.Sampler(
     {
       'C3': 'C3v8.mp3',
@@ -18,42 +19,43 @@ export function useTone() {
     },
     {
       release: 1,
-      baseUrl: window.location.hostname.includes('127.0.0.1')
-        ? '/samples/'
-        : 'https://updownupdown.github.io/chords/samples/',
+      baseUrl: '/samples/',
       onload: () => {
-        console.log('Tone.ts loaded')
+        isLoaded.value = true
+        console.info('Tone.ts loaded')
       },
     },
   ).toDestination()
 
-  const isLoaded = ref(sampler.loaded)
-
-  // plays a single note
-  function play(note: string | string[], time: string) {
+  const play = (note: string, time: string) => {
     sampler.triggerAttackRelease(note, time)
   }
 
-  // play a chord
   const playInterval = {
-    ascending(notes: string[], time: string) {
+    ascending(notes: [string, string], time: string) {
       sampler.triggerAttackRelease(notes[0], time, Tone.now())
       sampler.triggerAttackRelease(notes[1], time, Tone.now() + 1)
     },
-    descending(notes: string[], time: string) {
+    descending(notes: [string, string], time: string) {
       sampler.triggerAttackRelease(notes[1], time, Tone.now())
       sampler.triggerAttackRelease(notes[0], time, Tone.now() + 1)
     },
-    harmonic(notes: string[], time: string, now = 0) {
-      sampler.triggerAttackRelease(notes, time, Tone.now() + now)
+    harmonic(notes: string | [string, string], time: string, now = 0) {
+      if (typeof notes === 'string') {
+        sampler.triggerAttackRelease(notes, time, Tone.now() + now)
+      }
+      else {
+        sampler.triggerAttackRelease(notes[0], time, Tone.now() + now)
+        sampler.triggerAttackRelease(notes[1], time, Tone.now() + now)
+      }
     },
-    ascending_harmonic(notes: string[], time: string) {
-      this.ascending(notes, time)
-      this.harmonic(notes, time, 2)
+    ascending_harmonic(notes: [string, string], time: string) {
+      playInterval.ascending(notes, time)
+      playInterval.harmonic(notes, time, 2)
     },
-    descending_harmonic(notes: string[], time: string) {
-      this.descending(notes, time)
-      this.harmonic(notes, time, 2)
+    descending_harmonic(notes: [string, string], time: string) {
+      playInterval.descending(notes, time)
+      playInterval.harmonic(notes, time, 2)
     },
   }
 

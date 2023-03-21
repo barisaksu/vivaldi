@@ -13,13 +13,35 @@ const { userAnswer, isCorrect, selectedIntervals, autoSkip, autoSkipTime, firstN
 //   return userAnswer.value !== '' && !isCorrect.value
 // })
 
+function formatNote(note: string) {
+  const regex = /^([a-g]|[A-G])#?([0-9])/
+  const match = note.match(regex)
+  if (match) {
+    const letter = match[1].toUpperCase()
+    const octave = match[2]
+    return letter + octave
+  }
+  else {
+    return undefined
+  }
+}
+
 function play_interval() {
+  // firstNote ve secondNote kontrol ediliyor ve doğru formatta olana kadar yeni notalar üretiliyor.
+  let note1 = formatNote(firstNote.value)
+  let note2 = formatNote(secondNote.value)
+  while (note1 === undefined || note2 === undefined) {
+    intervalTrainingStore.newQuestion()
+    note1 = formatNote(firstNote.value)
+    note2 = formatNote(secondNote.value)
+  }
+
   switch (intervalType.value) {
-    case 'ascending': playInterval.ascending([firstNote.value, secondNote.value], '2n'); break
-    case 'descending': playInterval.descending([firstNote.value, secondNote.value], '2n'); break
-    case 'harmonic': playInterval.harmonic([firstNote.value, secondNote.value], '2n'); break
-    case 'ascending_harmonic': playInterval.ascending_harmonic([firstNote.value, secondNote.value], '2n'); break
-    case 'descending_harmonic': playInterval.descending_harmonic([firstNote.value, secondNote.value], '2n'); break
+    case 'ascending': playInterval.ascending([note1, note2], '2n'); break
+    case 'descending': playInterval.descending([note1, note2], '2n'); break
+    case 'harmonic': playInterval.harmonic([note1, note2], '2n'); break
+    case 'ascending_harmonic': playInterval.ascending_harmonic([note1, note2], '2n'); break
+    case 'descending_harmonic': playInterval.descending_harmonic([note1, note2], '2n'); break
   }
 }
 
