@@ -7,7 +7,7 @@ import goldenNoteLottie from '~/lotties/goldennote.json'
 import { useTonalityGuessingStore } from '~/store/tonalityguessing.store'
 
 const tonalityGuessingStore = useTonalityGuessingStore()
-const { currentSong, userGuess, isCorrect, isLoading } = storeToRefs(tonalityGuessingStore)
+const { currentSong, userGuess, isCorrect, showCorrectAnswer, isLoading } = storeToRefs(tonalityGuessingStore)
 
 const noteKeyMap = {
   0: 'C',
@@ -117,15 +117,22 @@ useHead({
           v-for="index in answerList"
           :key="index"
           class="bg-slate-700 rounded-lg hover:bg-slate-500 hover:-translate-y-4 duration-300 cursor-pointer transition-all p-12 h-full text-2xl font-bold hover:text-blue-400"
-          :class="{ 'text-red-500 border-2 border-red-500': userGuess !== null && userGuess !== currentSong.key && userGuess === index }"
+          :class="[
+            (index === currentSong.key && showCorrectAnswer === true) ? 'text-green-400 border-2 border-green-400' : '',
+            (index !== currentSong.key && showCorrectAnswer === true) ? 'text-red-500 border-2 border-red-500' : '',
+            (userGuess !== null && userGuess !== currentSong.key && userGuess === index) ? 'text-red-500 border-2 border-red-500' : '',
+          ]"
           @click="userGuess = parseInt(index)"
         >
           {{ noteKeyMap[index] }} {{ currentSong.mode === 1 ? "Major" : "Minor" }}
         </div>
       </div>
-      <div class="rounded-lg hover:bg-red-900 hover:-translate-y-4 duration-300 cursor-pointer transition-all p-8 text-center justify-self-center text-2xl font-bold border-2 border-red-700 text-red-700 hover:text-white">
+      <button v-if="showCorrectAnswer === false" class="rounded-lg hover:bg-red-900 hover:-translate-y-4 duration-300 cursor-pointer transition-all p-8 text-center justify-self-center text-2xl font-bold border-2 border-red-700 text-red-700 hover:text-white w-full" @click="showCorrectAnswer = true">
         {{ $t('vivaldiforse.tone_guessing.i_dont_know') }}
-      </div>
+      </button>
+      <button v-else class="rounded-lg hover:bg-green-900 hover:-translate-y-4 duration-300 cursor-pointer transition-all p-8 text-center justify-self-center text-2xl font-bold border-2 border-green-700 text-green-700 hover:text-white w-full" @click="isLoading = true">
+        {{ $t('vivaldiforse.tone_guessing.win_screen_btn') }}
+      </button>
     </div>
   </div>
   <!-- <div>

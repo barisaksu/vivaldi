@@ -14,6 +14,7 @@ export const useTonalityGuessingStore = defineStore('tonalityguessing', () => {
   })
   const showGuessing = ref(false)
   const userGuess = ref<any>()
+  const showCorrectAnswer = ref(false)
 
   // if currentSong.key is equal to userGuess, then the user is correct
   const isCorrect = computed(() => {
@@ -34,6 +35,7 @@ export const useTonalityGuessingStore = defineStore('tonalityguessing', () => {
     }
     showGuessing.value = false
     userGuess.value = null
+    showCorrectAnswer.value = false
   }
 
   return {
@@ -43,6 +45,7 @@ export const useTonalityGuessingStore = defineStore('tonalityguessing', () => {
     showGuessing,
     userGuess,
     isCorrect,
+    showCorrectAnswer,
     resetGame,
   }
 })
