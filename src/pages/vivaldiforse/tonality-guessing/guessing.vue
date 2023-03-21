@@ -110,10 +110,16 @@ useHead({
     </div>
     <div v-else>
       <h1 class="font-bold text-3xl">
-        {{ $t('vivaldiforse.tone_guessing.whats_your_guess') }}
+        {{ $t('vivaldiforse.tone_guessing.whats_your_guess') }} - {{ wrongGuesses }}/{{ maxWrongGuesses }}
       </h1>
       <div class="grid grid-cols-3 gap-3 h-2/3 justify-center items-center text-center self-center content-center justify-self-center w-full">
-        <div v-for="index in answerList" :key="index" class="bg-slate-700 rounded-lg hover:bg-slate-500 hover:-translate-y-4 duration-300 cursor-pointer transition-all p-12 h-full text-2xl font-bold hover:text-blue-400" @click="userGuess = parseInt(index)">
+        <div
+          v-for="index in answerList"
+          :key="index"
+          class="bg-slate-700 rounded-lg hover:bg-slate-500 hover:-translate-y-4 duration-300 cursor-pointer transition-all p-12 h-full text-2xl font-bold hover:text-blue-400"
+          :class="{ 'text-red-500 border-2 border-red-500': userGuess !== null && userGuess !== currentSong.key && userGuess === index }"
+          @click="userGuess = parseInt(index)"
+        >
           {{ noteKeyMap[index] }} {{ currentSong.mode === 1 ? "Major" : "Minor" }}
         </div>
       </div>
