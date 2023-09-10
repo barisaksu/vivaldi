@@ -30,7 +30,7 @@ specifiers:
   markdown-it-shiki: ^0.5.1
   nprogress: ^0.2.0
   pinia: ^2.0.27
-  pnpm: ^7.17.1
+  pnpm: ^7.33.4
   postcss: ^8.4.19
   sass: ^1.56.1
   shiki: ^0.10.1
@@ -102,7 +102,7 @@ devDependencies:
   https-localhost: 4.7.1
   markdown-it-link-attributes: 4.0.1
   markdown-it-shiki: 0.5.1
-  pnpm: 7.26.2
+  pnpm: 7.33.4
   postcss: 8.4.21
   sass: 1.57.1
   shiki: 0.10.1
@@ -7025,8 +7025,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /pnpm/7.26.2:
-    resolution: {integrity: sha512-Ywwh8puMMJQDO0kX4gxW9yBdbYISt3B6IfekexzWIium5wmpopAHMUpLuxRac5U5AAIIvt4ZQntWy6VcXs0iEg==}
+  /pnpm/7.33.4:
+    resolution: {integrity: sha512-xEbf/tkwHpGM/GXq5U/sDSiE6ykLPho+o71PHNRWqkVLm6dJe4G/5Pg619Ow32ovekrr7pii5qtfamujB/+1bA==}
     engines: {node: '>=14.6'}
     hasBin: true
     dev: true
