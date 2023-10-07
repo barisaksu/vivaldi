@@ -57,7 +57,7 @@
     "markdown-it-link-attributes": "^4.0.1",
     "markdown-it-shiki": "^0.5.1",
     "pnpm": "^7.33.4",
-    "postcss": "^8.4.19",
+    "postcss": "^8.4.31",
     "sass": "^1.56.1",
     "shiki": "^0.10.1",
     "tailwindcss": "^3.2.4",
